@@ -1,0 +1,3917 @@
+
+R version 3.6.2 (2019-12-12) -- "Dark and Stormy Night"
+Copyright (C) 2019 The R Foundation for Statistical Computing
+Platform: x86_64-pc-linux-gnu (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> #libraries
+> library(ergm.count)
+Loading required package: ergm
+Loading required package: network
+network: Classes for Relational Data
+Version 1.15 created on 2019-04-01.
+copyright (c) 2005, Carter T. Butts, University of California-Irvine
+                    Mark S. Handcock, University of California -- Los Angeles
+                    David R. Hunter, Penn State University
+                    Martina Morris, University of Washington
+                    Skye Bender-deMoll, University of Washington
+ For citation information, type citation("network").
+ Type help("network-package") to get started.
+
+
+ergm: version 3.11.0, created on 2020-10-14
+Copyright (c) 2020, Mark S. Handcock, University of California -- Los Angeles
+                    David R. Hunter, Penn State University
+                    Carter T. Butts, University of California -- Irvine
+                    Steven M. Goodreau, University of Washington
+                    Pavel N. Krivitsky, UNSW Sydney
+                    Martina Morris, University of Washington
+                    with contributions from
+                    Li Wang
+                    Kirk Li, University of Washington
+                    Skye Bender-deMoll, University of Washington
+                    Chad Klumb
+                    Michał Bojanowski, Kozminski University
+                    Ben Bolker
+Based on "statnet" project software (statnet.org).
+For license and citation information see statnet.org/attribution
+or type citation("ergm").
+
+NOTE: Versions before 3.6.1 had a bug in the implementation of the bd()
+constraint which distorted the sampled distribution somewhat. In
+addition, Sampson's Monks datasets had mislabeled vertices. See the
+NEWS and the documentation for more details.
+
+NOTE: Some common term arguments pertaining to vertex attribute and
+level selection have changed in 3.10.0. See terms help for more
+details. Use ‘options(ergm.term=list(version="3.9.4"))’ to use old
+behavior.
+
+
+ergm.count: version 3.4.0, created on 2019-05-15
+Copyright (c) 2019, Pavel N. Krivitsky, University of Wollongong
+                    with contributions from
+                    Mark S. Handcock, University of California -- Los Angeles
+                    David R. Hunter, Penn State University
+Based on "statnet" project software (statnet.org).
+For license and citation information see statnet.org/attribution
+or type citation("ergm.count").
+
+NOTE: The form of the term ‘CMP’ has been changed in version 3.2 of
+‘ergm.count’. See the news or help('CMP') for more information.
+
+> source("model_specs.R")
+> library(doParallel)
+Loading required package: foreach
+Loading required package: iterators
+Loading required package: parallel
+> library(foreach)
+> #set cores
+> seed=1234
+> iter = 100
+> mcmcsamplesize = 5000
+> 
+> 
+> 
+> #load all industry data
+> load("mono_net_75.Rdata")
+> load("mono_cov_75.Rdata")
+> ncores = 8
+> registerDoParallel(cores=ncores) 
+> ergms <- foreach(i=1:15, .errorhandling = 'pass') %dopar% {
++   net <- netlist[[i]]
++   set.seed(seed)
++   m1 <-eval(ergm_pre_covid)
++ }
+Starting contrastive divergence estimation via CD-MCMLE:
+Starting contrastive divergence estimation via CD-MCMLE:
+Starting contrastive divergence estimation via CD-MCMLE:
+Starting contrastive divergence estimation via CD-MCMLE:
+Iteration 1 of at most 60:
+Iteration 1 of at most 60:
+Iteration 1 of at most 60:
+Iteration 1 of at most 60:
+Starting contrastive divergence estimation via CD-MCMLE:
+Starting contrastive divergence estimation via CD-MCMLE:
+Starting contrastive divergence estimation via CD-MCMLE:
+Iteration 1 of at most 60:
+Starting contrastive divergence estimation via CD-MCMLE:
+Iteration 1 of at most 60:
+Iteration 1 of at most 60:
+Iteration 1 of at most 60:
+Convergence test P-value:0e+00
+Convergence test P-value:0e+00
+Convergence test P-value:0e+00
+Convergence test P-value:0e+00
+Optimizing with step length 0.860899268825564.
+Optimizing with step length 0.781913943074415.
+The log-likelihood improved by 1.194.
+Iteration 2 of at most 60:
+The log-likelihood improved by 1.424.
+Iteration 2 of at most 60:
+Optimizing with step length 0.779998219174139.
+The log-likelihood improved by 1.23.
+Iteration 2 of at most 60:
+Optimizing with step length 0.829885446848886.
+The log-likelihood improved by 1.336.
+Iteration 2 of at most 60:
+Convergence test P-value:0e+00
+Convergence test P-value:0e+00
+Convergence test P-value:0e+00
+Optimizing with step length 0.820319074576944.
+Convergence test P-value:0e+00
+The log-likelihood improved by 1.413.
+Iteration 2 of at most 60:
+Optimizing with step length 0.873844984908712.
+The log-likelihood improved by 1.624.
+Iteration 2 of at most 60:
+Optimizing with step length 0.829885446848886.
+The log-likelihood improved by 1.408.
+Iteration 2 of at most 60:
+Optimizing with step length 0.80787188384397.
+The log-likelihood improved by 1.338.
+Iteration 2 of at most 60:
+Convergence test P-value:0e+00
+Convergence test P-value:0e+00
+Optimizing with step length 1.
+Convergence test P-value:0e+00
+The log-likelihood improved by 1.613.
+Iteration 3 of at most 60:
+Optimizing with step length 0.831398843280115.
+The log-likelihood improved by 1.236.
+Iteration 3 of at most 60:
+Convergence test P-value:0e+00
+Optimizing with step length 0.829458771388348.
+The log-likelihood improved by 1.267.
+Iteration 3 of at most 60:
+Optimizing with step length 0.984686885765635.
+The log-likelihood improved by 1.753.
+Iteration 3 of at most 60:
+Convergence test P-value:0e+00
+Optimizing with step length 0.920529487990058.
+The log-likelihood improved by 1.692.
+Iteration 3 of at most 60:
+Convergence test P-value:0e+00
+Convergence test P-value:0e+00
+Convergence test P-value:0e+00
+Optimizing with step length 0.84876579748271.
+The log-likelihood improved by 1.305.
+Iteration 3 of at most 60:
+Optimizing with step length 0.841920336956404.
+The log-likelihood improved by 1.302.
+Iteration 3 of at most 60:
+Optimizing with step length 0.825066125799734.
+The log-likelihood improved by 1.268.
+Iteration 3 of at most 60:
+Convergence test P-value:0e+00
+Optimizing with step length 0.932940578690894.
+The log-likelihood improved by 1.477.
+Iteration 4 of at most 60:
+Convergence test P-value:0e+00
+Convergence test P-value:0e+00
+Optimizing with step length 1.
+The log-likelihood improved by 1.056.
+Iteration 4 of at most 60:
+Optimizing with step length 0.981859607939712.
+The log-likelihood improved by 1.676.
+Iteration 4 of at most 60:
+Convergence test P-value:0e+00
+Optimizing with step length 1.
+The log-likelihood improved by 1.069.
+Iteration 4 of at most 60:
+Convergence test P-value:0e+00
+Optimizing with step length 1.
+The log-likelihood improved by 1.366.
+Iteration 4 of at most 60:
+Convergence test P-value:0e+00
+Optimizing with step length 0.935698156472409.
+The log-likelihood improved by 1.423.
+Iteration 4 of at most 60:
+Convergence test P-value:0e+00
+Optimizing with step length 1.
+The log-likelihood improved by 1.723.
+Iteration 4 of at most 60:
+Convergence test P-value:0e+00
+Optimizing with step length 0.986442783932626.
+The log-likelihood improved by 1.705.
+Iteration 4 of at most 60:
+Convergence test P-value:0e+00
+Optimizing with step length 1.
+The log-likelihood improved by 1.295.
+Iteration 5 of at most 60:
+Convergence test P-value:0e+00
+Optimizing with step length 1.
+The log-likelihood improved by 0.4943.
+Iteration 5 of at most 60:
+Convergence test P-value:0e+00
+Optimizing with step length 1.
+The log-likelihood improved by 1.159.
+Iteration 5 of at most 60:
+Convergence test P-value:0e+00
+Optimizing with step length 1.
+The log-likelihood improved by 0.6372.
+Iteration 5 of at most 60:
+Convergence test P-value:0e+00
+Optimizing with step length 1.
+The log-likelihood improved by 0.7337.
+Iteration 5 of at most 60:
+Convergence test P-value:0e+00
+Optimizing with step length 1.
+The log-likelihood improved by 1.07.
+Iteration 5 of at most 60:
+Convergence test P-value:0e+00
+Optimizing with step length 1.
+The log-likelihood improved by 1.021.
+Iteration 5 of at most 60:
+Convergence test P-value:0e+00
+Optimizing with step length 1.
+The log-likelihood improved by 1.038.
+Iteration 5 of at most 60:
+Convergence test P-value:0e+00
+Optimizing with step length 1.
+The log-likelihood improved by 0.7508.
+Iteration 6 of at most 60:
+Convergence test P-value:0e+00
+Optimizing with step length 1.
+The log-likelihood improved by 0.1928.
+Iteration 6 of at most 60:
+Convergence test P-value:0e+00
+Optimizing with step length 1.
+The log-likelihood improved by 0.6248.
+Iteration 6 of at most 60:
+Convergence test P-value:0e+00
+Optimizing with step length 1.
+The log-likelihood improved by 0.2323.
+Iteration 6 of at most 60:
+Convergence test P-value:0e+00
+Optimizing with step length 1.
+The log-likelihood improved by 0.4211.
+Iteration 6 of at most 60:
+Convergence test P-value:0e+00
+Optimizing with step length 1.
+The log-likelihood improved by 0.5506.
+Iteration 6 of at most 60:
+Convergence test P-value:0e+00
+Optimizing with step length 1.
+The log-likelihood improved by 0.5448.
+Iteration 6 of at most 60:
+Convergence test P-value:0e+00
+Optimizing with step length 1.
+The log-likelihood improved by 0.4708.
+Iteration 6 of at most 60:
+Convergence test P-value:0e+00
+Optimizing with step length 1.
+The log-likelihood improved by 0.3636.
+Iteration 7 of at most 60:
+Convergence test P-value:0e+00
+Optimizing with step length 1.
+The log-likelihood improved by 0.3088.
+Iteration 7 of at most 60:
+Convergence test P-value:1.2e-170
+Optimizing with step length 1.
+The log-likelihood improved by 0.08999.
+Iteration 7 of at most 60:
+Convergence test P-value:1.6e-214
+Optimizing with step length 1.
+The log-likelihood improved by 0.1176.
+Iteration 7 of at most 60:
+Convergence test P-value:0e+00
+Optimizing with step length 1.
+The log-likelihood improved by 0.2211.
+Iteration 7 of at most 60:
+Convergence test P-value:0e+00
+Optimizing with step length 1.
+The log-likelihood improved by 0.2843.
+Iteration 7 of at most 60:
+Convergence test P-value:0e+00
+Optimizing with step length 1.
+The log-likelihood improved by 0.233.
+Iteration 7 of at most 60:
+Convergence test P-value:0e+00
+Optimizing with step length 1.
+The log-likelihood improved by 0.2312.
+Iteration 7 of at most 60:
+Convergence test P-value:1.1e-268
+Optimizing with step length 1.
+The log-likelihood improved by 0.1543.
+Iteration 8 of at most 60:
+Convergence test P-value:4.4e-91
+Optimizing with step length 1.
+The log-likelihood improved by 0.04585.
+Iteration 8 of at most 60:
+Convergence test P-value:2.8e-254
+Optimizing with step length 1.
+The log-likelihood improved by 0.1435.
+Iteration 8 of at most 60:
+Convergence test P-value:4.8e-73
+Optimizing with step length 1.
+The log-likelihood improved by 0.03661.
+Iteration 8 of at most 60:
+Convergence test P-value:9e-207
+Optimizing with step length 1.
+The log-likelihood improved by 0.1129.
+Iteration 8 of at most 60:
+Convergence test P-value:5.3e-250
+Optimizing with step length 1.
+The log-likelihood improved by 0.1407.
+Iteration 8 of at most 60:
+Convergence test P-value:1.3e-242
+Optimizing with step length 1.
+The log-likelihood improved by 0.1351.
+Iteration 8 of at most 60:
+Convergence test P-value:1e-165
+Optimizing with step length 1.
+The log-likelihood improved by 0.08764.
+Iteration 8 of at most 60:
+Convergence test P-value:4.2e-40
+Optimizing with step length 1.
+The log-likelihood improved by 0.01971.
+Iteration 9 of at most 60:
+Convergence test P-value:6.1e-148
+Optimizing with step length 1.
+The log-likelihood improved by 0.07775.
+Iteration 9 of at most 60:
+Convergence test P-value:2.6e-22
+Optimizing with step length 1.
+The log-likelihood improved by 0.01105.
+Iteration 9 of at most 60:
+Convergence test P-value:1.5e-72
+Optimizing with step length 1.
+The log-likelihood improved by 0.03648.
+Iteration 9 of at most 60:
+Convergence test P-value:2.7e-146
+Optimizing with step length 1.
+The log-likelihood improved by 0.07608.
+Iteration 9 of at most 60:
+Convergence test P-value:1.9e-134
+Optimizing with step length 1.
+The log-likelihood improved by 0.06938.
+Iteration 9 of at most 60:
+Convergence test P-value:1.7e-110
+Optimizing with step length 1.
+The log-likelihood improved by 0.05627.
+Iteration 9 of at most 60:
+Convergence test P-value:1.1e-92
+Optimizing with step length 1.
+The log-likelihood improved by 0.04657.
+Iteration 9 of at most 60:
+Convergence test P-value:2.6e-17
+Optimizing with step length 1.
+The log-likelihood improved by 0.008577.
+Iteration 10 of at most 60:
+Convergence test P-value:2.8e-14
+Optimizing with step length 1.
+Convergence test P-value:2.9e-70
+The log-likelihood improved by 0.007106.
+Iteration 10 of at most 60:
+Optimizing with step length 1.
+The log-likelihood improved by 0.03501.
+Iteration 10 of at most 60:
+Convergence test P-value:8.5e-45
+Convergence test P-value:1.1e-50
+Optimizing with step length 1.
+Optimizing with step length 1.
+The log-likelihood improved by 0.02219.
+Iteration 10 of at most 60:
+The log-likelihood improved by 0.02489.
+Iteration 10 of at most 60:
+Convergence test P-value:8.6e-51
+Optimizing with step length 1.
+The log-likelihood improved by 0.0252.
+Iteration 10 of at most 60:
+Convergence test P-value:1.2e-58
+Optimizing with step length 1.
+The log-likelihood improved by 0.02899.
+Iteration 10 of at most 60:
+Convergence test P-value:7.3e-33
+Optimizing with step length 1.
+The log-likelihood improved by 0.01609.
+Iteration 10 of at most 60:
+Convergence test P-value:3.8e-10
+Optimizing with step length 1.
+The log-likelihood improved by 0.005061.
+Iteration 11 of at most 60:
+Convergence test P-value:6.5e-34
+Optimizing with step length 1.
+The log-likelihood improved by 0.01667.
+Iteration 11 of at most 60:
+Convergence test P-value:1.6e-05
+Optimizing with step length 1.
+The log-likelihood improved by 0.002775.
+Iteration 11 of at most 60:
+Convergence test P-value:1.4e-24
+Optimizing with step length 1.
+The log-likelihood improved by 0.01208.
+Iteration 11 of at most 60:
+Convergence test P-value:2.3e-28
+Optimizing with step length 1.
+The log-likelihood improved by 0.01393.
+Iteration 11 of at most 60:
+Convergence test P-value:1.8e-34
+Optimizing with step length 1.
+The log-likelihood improved by 0.01705.
+Iteration 11 of at most 60:
+Convergence test P-value:8.4e-27
+Optimizing with step length 1.
+The log-likelihood improved by 0.01315.
+Iteration 11 of at most 60:
+Convergence test P-value:7.7e-04
+Optimizing with step length 1.
+The log-likelihood improved by 0.001913.
+Iteration 12 of at most 60:
+Convergence test P-value:7.2e-23
+Optimizing with step length 1.
+The log-likelihood improved by 0.01125.
+Iteration 11 of at most 60:
+Convergence test P-value:3.1e-02
+Optimizing with step length 1.
+The log-likelihood improved by 0.001071.
+Iteration 12 of at most 60:
+Convergence test P-value:2.4e-13
+Optimizing with step length 1.
+The log-likelihood improved by 0.006612.
+Iteration 12 of at most 60:
+Convergence test P-value:5.3e-07
+Optimizing with step length 1.
+The log-likelihood improved by 0.003495.
+Iteration 12 of at most 60:
+Convergence test P-value:1.8e-08
+Optimizing with step length 1.
+The log-likelihood improved by 0.004216.
+Iteration 12 of at most 60:
+Convergence test P-value:1.4e-11
+Convergence test P-value:9.5e-10
+Optimizing with step length 1.
+Optimizing with step length 1.
+The log-likelihood improved by 0.00579.
+Iteration 12 of at most 60:
+The log-likelihood improved by 0.004878.
+Iteration 12 of at most 60:
+Convergence test P-value:9.8e-11
+Optimizing with step length 1.
+The log-likelihood improved by 0.005333.
+Iteration 12 of at most 60:
+Convergence test P-value:2e-07
+Optimizing with step length 1.
+The log-likelihood improved by 0.003688.
+Iteration 13 of at most 60:
+Convergence test P-value:1.2e-03
+Optimizing with step length 1.
+The log-likelihood improved by 0.001812.
+Iteration 13 of at most 60:
+Convergence test P-value:1e-01
+Optimizing with step length 1.
+The log-likelihood improved by 0.0007751.
+Iteration 13 of at most 60:
+Convergence test P-value:3.8e-07
+Optimizing with step length 1.
+The log-likelihood improved by 0.003606.
+Iteration 13 of at most 60:
+Convergence test P-value:2.7e-03
+Optimizing with step length 1.
+The log-likelihood improved by 0.001633.
+Iteration 13 of at most 60:
+Convergence test P-value:1.1e-03
+Optimizing with step length 1.
+The log-likelihood improved by 0.00183.
+Iteration 13 of at most 60:
+Convergence test P-value:4.1e-03
+Optimizing with step length 1.
+The log-likelihood improved by 0.00154.
+Iteration 13 of at most 60:
+Convergence test P-value:7.7e-02
+Optimizing with step length 1.
+The log-likelihood improved by 0.0008425.
+Iteration 13 of at most 60:
+Convergence test P-value:2.1e-01
+Optimizing with step length 1.
+The log-likelihood improved by 0.0005923.
+Iteration 14 of at most 60:
+Convergence test P-value:4.2e-03
+Optimizing with step length 1.
+The log-likelihood improved by 0.001528.
+Iteration 14 of at most 60:
+Convergence test P-value:3e-04
+Optimizing with step length 1.
+The log-likelihood improved by 0.002114.
+Iteration 14 of at most 60:
+Convergence test P-value:1.2e-04
+Optimizing with step length 1.
+The log-likelihood improved by 0.002306.
+Iteration 14 of at most 60:
+Convergence test P-value:1.2e-05
+Optimizing with step length 1.
+The log-likelihood improved by 0.002857.
+Iteration 14 of at most 60:
+Convergence test P-value:2e-06
+Optimizing with step length 1.
+The log-likelihood improved by 0.003208.
+Iteration 14 of at most 60:
+Convergence test P-value:4.9e-03
+Optimizing with step length 1.
+The log-likelihood improved by 0.001499.
+Iteration 14 of at most 60:
+Convergence test P-value:1e-03
+Optimizing with step length 1.
+The log-likelihood improved by 0.001851.
+Iteration 14 of at most 60:
+Convergence test P-value:1.1e-03
+Optimizing with step length 1.
+The log-likelihood improved by 0.001819.
+Iteration 15 of at most 60:
+Convergence test P-value:9e-01
+Convergence detected. Stopping.
+Optimizing with step length 1.
+The log-likelihood improved by 0.0001035.
+Starting Monte Carlo maximum likelihood estimation (MCMLE):
+Iteration 1 of at most 100:
+Convergence test P-value:2.9e-04
+Optimizing with step length 1.
+The log-likelihood improved by 0.002139.
+Iteration 15 of at most 60:
+Convergence test P-value:4e-04
+Optimizing with step length 1.
+The log-likelihood improved by 0.002048.
+Iteration 15 of at most 60:
+Convergence test P-value:3.6e-02
+Optimizing with step length 1.
+The log-likelihood improved by 0.001026.
+Iteration 15 of at most 60:
+Convergence test P-value:3.8e-02
+Optimizing with step length 1.
+The log-likelihood improved by 0.001015.
+Iteration 15 of at most 60:
+Convergence test P-value:7.3e-04
+Optimizing with step length 1.
+The log-likelihood improved by 0.001926.
+Iteration 15 of at most 60:
+Convergence test P-value:5e-01
+Convergence detected. Stopping.
+Optimizing with step length 1.
+The log-likelihood improved by 0.0003344.
+Starting Monte Carlo maximum likelihood estimation (MCMLE):
+Iteration 1 of at most 100:
+Convergence test P-value:4.2e-02
+Optimizing with step length 1.
+The log-likelihood improved by 0.0009981.
+Iteration 16 of at most 60:
+Convergence test P-value:8.5e-01
+Convergence detected. Stopping.
+Optimizing with step length 1.
+The log-likelihood improved by 0.0001379.
+Starting Monte Carlo maximum likelihood estimation (MCMLE):
+Iteration 1 of at most 100:
+Convergence test P-value:6.3e-01
+Convergence detected. Stopping.
+Optimizing with step length 1.
+The log-likelihood improved by 0.0002605.
+Starting Monte Carlo maximum likelihood estimation (MCMLE):
+Iteration 1 of at most 100:
+Convergence test P-value:2.9e-03
+Optimizing with step length 1.
+The log-likelihood improved by 0.001576.
+Iteration 16 of at most 60:
+Convergence test P-value:1e-01
+Optimizing with step length 1.
+The log-likelihood improved by 0.000774.
+Iteration 16 of at most 60:
+Convergence test P-value:9.7e-02
+Optimizing with step length 1.
+The log-likelihood improved by 0.0007894.
+Iteration 16 of at most 60:
+Convergence test P-value:9e-01
+Convergence detected. Stopping.
+Optimizing with step length 1.
+The log-likelihood improved by 0.0001051.
+Starting Monte Carlo maximum likelihood estimation (MCMLE):
+Iteration 1 of at most 100:
+Convergence test P-value:8.4e-01
+Convergence detected. Stopping.
+Optimizing with step length 1.
+The log-likelihood improved by 0.0001404.
+Starting Monte Carlo maximum likelihood estimation (MCMLE):
+Iteration 1 of at most 100:
+Convergence test P-value:9.7e-01
+Convergence detected. Stopping.
+Optimizing with step length 1.
+The log-likelihood improved by < 0.0001.
+Starting Monte Carlo maximum likelihood estimation (MCMLE):
+Iteration 1 of at most 100:
+Convergence test P-value:2.9e-04
+Optimizing with step length 1.
+The log-likelihood improved by 0.00213.
+Iteration 17 of at most 60:
+Convergence test P-value:1.5e-01
+Optimizing with step length 1.
+The log-likelihood improved by 0.0006739.
+Iteration 18 of at most 60:
+Convergence test P-value:9.6e-01
+Convergence detected. Stopping.
+Optimizing with step length 1.
+The log-likelihood improved by < 0.0001.
+Starting Monte Carlo maximum likelihood estimation (MCMLE):
+Iteration 1 of at most 100:
+Optimizing with step length 0.740612703806622.
+The log-likelihood did not improve.
+Iteration 2 of at most 100:
+Optimizing with step length 0.727571272620488.
+The log-likelihood did not improve.
+Iteration 2 of at most 100:
+Optimizing with step length 0.84181701477025.
+The log-likelihood did not improve.
+Iteration 2 of at most 100:
+Optimizing with step length 0.814135477503589.
+The log-likelihood did not improve.
+Iteration 2 of at most 100:
+Optimizing with step length 0.54419930320701.
+The log-likelihood did not improve.
+Iteration 2 of at most 100:
+Optimizing with step length 0.819440424433337.
+The log-likelihood did not improve.
+Iteration 2 of at most 100:
+Optimizing with step length 0.76929609882219.
+The log-likelihood did not improve.
+Iteration 2 of at most 100:
+Optimizing with step length 0.721983108075326.
+The log-likelihood did not improve.
+Iteration 2 of at most 100:
+Optimizing with step length 1.
+The log-likelihood improved by 10.18.
+Step length converged once. Increasing MCMC sample size.
+Iteration 3 of at most 100:
+Optimizing with step length 1.
+The log-likelihood improved by 4.042.
+Step length converged once. Increasing MCMC sample size.
+Iteration 3 of at most 100:
+Optimizing with step length 1.
+The log-likelihood improved by 2.929.
+Step length converged once. Increasing MCMC sample size.
+Iteration 3 of at most 100:
+Optimizing with step length 0.756929033983328.
+The log-likelihood improved by 10.37.
+Iteration 3 of at most 100:
+Optimizing with step length 0.637574210166884.
+The log-likelihood improved by 11.07.
+Iteration 3 of at most 100:
+Optimizing with step length 0.934734845710306.
+The log-likelihood improved by 15.84.
+Iteration 3 of at most 100:
+Optimizing with step length 1.
+The log-likelihood improved by 3.861.
+Step length converged once. Increasing MCMC sample size.
+Iteration 3 of at most 100:
+Optimizing with step length 1.
+The log-likelihood improved by 4.737.
+Step length converged once. Increasing MCMC sample size.
+Iteration 3 of at most 100:
+Optimizing with step length 0.888211228115355.
+The log-likelihood improved by 4.686.
+Iteration 4 of at most 100:
+Optimizing with step length 1.
+The log-likelihood improved by 1.864.
+Step length converged once. Increasing MCMC sample size.
+Iteration 4 of at most 100:
+Optimizing with step length 0.725724611399383.
+The log-likelihood improved by 3.501.
+Iteration 4 of at most 100:
+Optimizing with step length 1.
+The log-likelihood improved by 0.9284.
+Step length converged once. Increasing MCMC sample size.
+Iteration 5 of at most 100:
+Optimizing with step length 1.
+The log-likelihood improved by 0.8496.
+Step length converged once. Increasing MCMC sample size.
+Iteration 5 of at most 100:
+Optimizing with step length 1.
+The log-likelihood improved by 0.441.
+Step length converged twice. Stopping.
+Finished MCMLE.
+Note: Null model likelihood calculation is not implemented for valued
+ERGMs at this time.  This means that all likelihood-based inference
+(LRT, Analysis of Deviance, AIC, BIC, etc.) is only valid between
+models with the same reference distribution and constraints.
+Evaluating log-likelihood at the estimate. Using 20 bridges: 1 Optimizing with step length 1.
+The log-likelihood improved by 0.03397.
+Step length converged twice. Stopping.
+Finished MCMLE.
+Note: Null model likelihood calculation is not implemented for valued
+ERGMs at this time.  This means that all likelihood-based inference
+(LRT, Analysis of Deviance, AIC, BIC, etc.) is only valid between
+models with the same reference distribution and constraints.
+Evaluating log-likelihood at the estimate. Using 20 bridges: 1 2 2 3 3 4 Optimizing with step length 1.
+The log-likelihood improved by 0.04877.
+Step length converged twice. Stopping.
+Finished MCMLE.
+Note: Null model likelihood calculation is not implemented for valued
+ERGMs at this time.  This means that all likelihood-based inference
+(LRT, Analysis of Deviance, AIC, BIC, etc.) is only valid between
+models with the same reference distribution and constraints.
+Evaluating log-likelihood at the estimate. Using 20 bridges: 1 4 5 2 5 6 3 6 7 7 4 8 8 9 5 9 10 Optimizing with step length 1.
+The log-likelihood improved by 0.1835.
+Step length converged twice. Stopping.
+Finished MCMLE.
+Note: Null model likelihood calculation is not implemented for valued
+ERGMs at this time.  This means that all likelihood-based inference
+(LRT, Analysis of Deviance, AIC, BIC, etc.) is only valid between
+models with the same reference distribution and constraints.
+Evaluating log-likelihood at the estimate. Using 20 bridges: 1 10 Optimizing with step length 1.
+The log-likelihood improved by 0.07217.
+Step length converged twice. Stopping.
+Finished MCMLE.
+Note: Null model likelihood calculation is not implemented for valued
+ERGMs at this time.  This means that all likelihood-based inference
+(LRT, Analysis of Deviance, AIC, BIC, etc.) is only valid between
+models with the same reference distribution and constraints.
+Evaluating log-likelihood at the estimate. Using 20 bridges: 1 6 11 2 11 7 2 12 12 3 13 8 3 4 13 14 4 9 15 14 5 5 16 10 15 6 6 17 16 7 11 7 18 8 17 8 12 9 9 13 18 19 10 10 14 11 11 Optimizing with step length 1.
+The log-likelihood improved by 0.03191.
+Step length converged twice. Stopping.
+Finished MCMLE.
+Note: Null model likelihood calculation is not implemented for valued
+ERGMs at this time.  This means that all likelihood-based inference
+(LRT, Analysis of Deviance, AIC, BIC, etc.) is only valid between
+models with the same reference distribution and constraints.
+Evaluating log-likelihood at the estimate. Using 20 bridges: 1 20 12 19 12 15 2 13 13 14 16 3 20 14 .
+This model was fit using MCMC.  To examine model diagnostics and check
+for degeneracy, use the mcmc.diagnostics() function.
+Starting contrastive divergence estimation via CD-MCMLE:
+Iteration 1 of at most 60:
+Convergence test P-value:0e+00
+Optimizing with step length 0.925122697437442.
+The log-likelihood improved by 1.762.
+Iteration 2 of at most 60:
+Convergence test P-value:0e+00
+Optimizing with step length 1.
+The log-likelihood improved by 1.623.
+Iteration 3 of at most 60:
+Convergence test P-value:0e+00
+Optimizing with step length 1.
+The log-likelihood improved by 0.7995.
+Iteration 4 of at most 60:
+15 4 Convergence test P-value:0e+00
+Optimizing with step length 1.
+The log-likelihood improved by 0.3634.
+Iteration 5 of at most 60:
+Convergence test P-value:4.1e-276
+Optimizing with step length 1.
+The log-likelihood improved by 0.1559.
+Iteration 6 of at most 60:
+Convergence test P-value:6.1e-144
+Optimizing with step length 1.
+The log-likelihood improved by 0.0754.
+Iteration 7 of at most 60:
+Convergence test P-value:1.3e-58
+Optimizing with step length 1.
+The log-likelihood improved by 0.02907.
+Iteration 8 of at most 60:
+Convergence test P-value:1.2e-25
+Optimizing with step length 1.
+The log-likelihood improved by 0.01255.
+Iteration 9 of at most 60:
+Convergence test P-value:1.4e-08
+Optimizing with step length 1.
+The log-likelihood improved by 0.004273.
+Iteration 10 of at most 60:
+17 Convergence test P-value:1.7e-03
+Optimizing with step length 1.
+The log-likelihood improved by 0.001751.
+Iteration 11 of at most 60:
+Convergence test P-value:2.7e-02
+Optimizing with step length 1.
+The log-likelihood improved by 0.001095.
+Iteration 12 of at most 60:
+Convergence test P-value:3.6e-01
+Optimizing with step length 1.
+The log-likelihood improved by 0.0004401.
+Iteration 13 of at most 60:
+Convergence test P-value:7.6e-02
+Optimizing with step length 1.
+The log-likelihood improved by 0.0008387.
+Iteration 14 of at most 60:
+15 Convergence test P-value:1.8e-03
+Optimizing with step length 1.
+The log-likelihood improved by 0.001707.
+Iteration 15 of at most 60:
+Convergence test P-value:5.5e-01
+Convergence detected. Stopping.
+Optimizing with step length 1.
+The log-likelihood improved by 0.0003066.
+Starting Monte Carlo maximum likelihood estimation (MCMLE):
+Iteration 1 of at most 100:
+5 16 .
+This model was fit using MCMC.  To examine model diagnostics and check
+for degeneracy, use the mcmc.diagnostics() function.
+Starting contrastive divergence estimation via CD-MCMLE:
+Iteration 1 of at most 60:
+6 Convergence test P-value:0e+00
+Optimizing with step length 0.805161795362866.
+The log-likelihood improved by 1.4.
+Iteration 2 of at most 60:
+Convergence test P-value:0e+00
+Optimizing with step length 0.846281299200429.
+The log-likelihood improved by 1.38.
+Iteration 3 of at most 60:
+Convergence test P-value:0e+00
+Optimizing with step length 0.83414069879547.
+The log-likelihood improved by 1.127.
+Iteration 4 of at most 60:
+Convergence test P-value:0e+00
+Optimizing with step length 0.956834229390184.
+The log-likelihood improved by 1.448.
+Iteration 5 of at most 60:
+Convergence test P-value:0e+00
+Optimizing with step length 1.
+The log-likelihood improved by 1.093.
+Iteration 6 of at most 60:
+16 Convergence test P-value:0e+00
+Optimizing with step length 1.
+The log-likelihood improved by 0.5324.
+Iteration 7 of at most 60:
+Convergence test P-value:0e+00
+Optimizing with step length 1.
+The log-likelihood improved by 0.2889.
+Iteration 8 of at most 60:
+Convergence test P-value:1.2e-200
+Optimizing with step length 1.
+The log-likelihood improved by 0.1078.
+Iteration 9 of at most 60:
+Convergence test P-value:2.4e-91
+Optimizing with step length 1.
+The log-likelihood improved by 0.0461.
+Iteration 10 of at most 60:
+Convergence test P-value:4.9e-27
+Optimizing with step length 1.
+The log-likelihood improved by 0.01332.
+Iteration 11 of at most 60:
+Convergence test P-value:4.7e-17
+Optimizing with step length 1.
+The log-likelihood improved by 0.008417.
+Iteration 12 of at most 60:
+Convergence test P-value:1.2e-07
+Optimizing with step length 1.
+The log-likelihood improved by 0.003781.
+Iteration 13 of at most 60:
+18 Convergence test P-value:9e-04
+Optimizing with step length 1.
+The log-likelihood improved by 0.00188.
+Iteration 14 of at most 60:
+7 Convergence test P-value:2e-01
+Optimizing with step length 1.
+The log-likelihood improved by 0.0006015.
+Iteration 15 of at most 60:
+Convergence test P-value:1.7e-01
+Optimizing with step length 1.
+The log-likelihood improved by 0.000653.
+Iteration 16 of at most 60:
+Convergence test P-value:5.6e-01
+Convergence detected. Stopping.
+Optimizing with step length 1.
+The log-likelihood improved by 0.0002976.
+Starting Monte Carlo maximum likelihood estimation (MCMLE):
+Iteration 1 of at most 100:
+17 8 17 9 19 18 10 18 11 Optimizing with step length 1.
+The log-likelihood improved by 0.01615.
+Step length converged twice. Stopping.
+Finished MCMLE.
+Note: Null model likelihood calculation is not implemented for valued
+ERGMs at this time.  This means that all likelihood-based inference
+(LRT, Analysis of Deviance, AIC, BIC, etc.) is only valid between
+models with the same reference distribution and constraints.
+Evaluating log-likelihood at the estimate. Using 20 bridges: 1 20 12 19 2 13 19 3 14 4 20 .
+This model was fit using MCMC.  To examine model diagnostics and check
+for degeneracy, use the mcmc.diagnostics() function.
+Starting contrastive divergence estimation via CD-MCMLE:
+Iteration 1 of at most 60:
+Convergence test P-value:0e+00
+Optimizing with step length 0.866593490607687.
+The log-likelihood improved by 1.526.
+Iteration 2 of at most 60:
+Convergence test P-value:0e+00
+Optimizing with step length 0.902359525989059.
+The log-likelihood improved by 1.463.
+Iteration 3 of at most 60:
+Convergence test P-value:0e+00
+Optimizing with step length 1.
+The log-likelihood improved by 1.419.
+Iteration 4 of at most 60:
+Convergence test P-value:0e+00
+Optimizing with step length 1.
+The log-likelihood improved by 0.7735.
+Iteration 5 of at most 60:
+Convergence test P-value:0e+00
+Optimizing with step length 1.
+The log-likelihood improved by 0.3838.
+Iteration 6 of at most 60:
+Convergence test P-value:2e-288
+Optimizing with step length 1.
+The log-likelihood improved by 0.166.
+Iteration 7 of at most 60:
+Convergence test P-value:9.9e-124
+Optimizing with step length 1.
+The log-likelihood improved by 0.06312.
+Iteration 8 of at most 60:
+15 Convergence test P-value:7.9e-60
+Optimizing with step length 1.
+The log-likelihood improved by 0.02942.
+Iteration 9 of at most 60:
+5 Convergence test P-value:3.3e-19
+Optimizing with step length 1.
+The log-likelihood improved by 0.009423.
+Iteration 10 of at most 60:
+Convergence test P-value:9.8e-08
+Optimizing with step length 1.
+The log-likelihood improved by 0.003862.
+Iteration 11 of at most 60:
+Convergence test P-value:6.1e-06
+Optimizing with step length 1.
+The log-likelihood improved by 0.002978.
+Iteration 12 of at most 60:
+Convergence test P-value:2.2e-02
+Optimizing with step length 1.
+The log-likelihood improved by 0.00115.
+Iteration 13 of at most 60:
+Convergence test P-value:5.3e-01
+Convergence detected. Stopping.
+Optimizing with step length 1.
+The log-likelihood improved by 0.0003205.
+Starting Monte Carlo maximum likelihood estimation (MCMLE):
+Iteration 1 of at most 100:
+20 6 16 Optimizing with step length 1.
+The log-likelihood improved by 0.007566.
+Step length converged twice. Stopping.
+Finished MCMLE.
+Note: Null model likelihood calculation is not implemented for valued
+ERGMs at this time.  This means that all likelihood-based inference
+(LRT, Analysis of Deviance, AIC, BIC, etc.) is only valid between
+models with the same reference distribution and constraints.
+Evaluating log-likelihood at the estimate. Using 20 bridges: 1 7 17 .
+This model was fit using MCMC.  To examine model diagnostics and check
+for degeneracy, use the mcmc.diagnostics() function.
+Starting contrastive divergence estimation via CD-MCMLE:
+Iteration 1 of at most 60:
+Convergence test P-value:0e+00
+Optimizing with step length 0.752666461929208.
+The log-likelihood improved by 1.063.
+Iteration 2 of at most 60:
+Convergence test P-value:0e+00
+Optimizing with step length 0.830617394856284.
+The log-likelihood improved by 1.302.
+Iteration 3 of at most 60:
+Convergence test P-value:0e+00
+Optimizing with step length 0.901744897650422.
+The log-likelihood improved by 1.4.
+Iteration 4 of at most 60:
+Convergence test P-value:0e+00
+Optimizing with step length 1.
+The log-likelihood improved by 1.44.
+Iteration 5 of at most 60:
+Convergence test P-value:0e+00
+Optimizing with step length 1.
+The log-likelihood improved by 0.8088.
+Iteration 6 of at most 60:
+Convergence test P-value:0e+00
+Optimizing with step length 1.
+The log-likelihood improved by 0.4286.
+Iteration 7 of at most 60:
+8 Convergence test P-value:0e+00
+Optimizing with step length 1.
+The log-likelihood improved by 0.2032.
+Iteration 8 of at most 60:
+2 Convergence test P-value:1.9e-171
+Optimizing with step length 1.
+The log-likelihood improved by 0.09206.
+Iteration 9 of at most 60:
+Convergence test P-value:1.6e-80
+Optimizing with step length 1.
+The log-likelihood improved by 0.04043.
+Iteration 10 of at most 60:
+Convergence test P-value:3.3e-34
+Optimizing with step length 1.
+The log-likelihood improved by 0.01687.
+Iteration 11 of at most 60:
+.
+This model was fit using MCMC.  To examine model diagnostics and check
+for degeneracy, use the mcmc.diagnostics() function.
+Starting contrastive divergence estimation via CD-MCMLE:
+Iteration 1 of at most 60:
+Convergence test P-value:1.8e-14
+Optimizing with step length 1.
+The log-likelihood improved by 0.007225.
+Iteration 12 of at most 60:
+Convergence test P-value:0e+00
+Optimizing with step length 0.868211533241797.
+The log-likelihood improved by 1.533.
+Iteration 2 of at most 60:
+Convergence test P-value:1.1e-05
+Optimizing with step length 1.
+The log-likelihood improved by 0.002833.
+Iteration 13 of at most 60:
+Convergence test P-value:6.8e-06
+Optimizing with step length 1.
+The log-likelihood improved by 0.00295.
+Iteration 14 of at most 60:
+Convergence test P-value:0e+00
+Optimizing with step length 1.
+The log-likelihood improved by 1.562.
+Iteration 3 of at most 60:
+Convergence test P-value:4e-02
+Optimizing with step length 1.
+The log-likelihood improved by 0.001007.
+Iteration 15 of at most 60:
+Convergence test P-value:0e+00
+Optimizing with step length 1.
+The log-likelihood improved by 1.005.
+Iteration 4 of at most 60:
+Convergence test P-value:9e-04
+Optimizing with step length 1.
+The log-likelihood improved by 0.00192.
+Iteration 16 of at most 60:
+Convergence test P-value:0e+00
+Optimizing with step length 1.
+The log-likelihood improved by 0.4807.
+Iteration 5 of at most 60:
+Convergence test P-value:1.2e-02
+Optimizing with step length 1.
+The log-likelihood improved by 0.00127.
+Iteration 17 of at most 60:
+Convergence test P-value:0e+00
+Optimizing with step length 1.
+The log-likelihood improved by 0.2003.
+Iteration 6 of at most 60:
+Convergence test P-value:1.5e-01
+Optimizing with step length 1.
+The log-likelihood improved by 0.0006796.
+Iteration 18 of at most 60:
+Convergence test P-value:8.2e-176
+Optimizing with step length 1.
+The log-likelihood improved by 0.09236.
+Iteration 7 of at most 60:
+9 Convergence test P-value:4.6e-01
+Optimizing with step length 1.
+The log-likelihood improved by 0.0003613.
+Iteration 19 of at most 60:
+Convergence test P-value:1.1e-50
+Optimizing with step length 1.
+The log-likelihood improved by 0.02497.
+Iteration 8 of at most 60:
+Convergence test P-value:3.5e-01
+Optimizing with step length 1.
+The log-likelihood improved by 0.0004477.
+Iteration 20 of at most 60:
+Convergence test P-value:1.9e-33
+Optimizing with step length 1.
+The log-likelihood improved by 0.0164.
+Iteration 9 of at most 60:
+Convergence test P-value:1.8e-01
+Optimizing with step length 1.
+The log-likelihood improved by 0.0006214.
+Iteration 21 of at most 60:
+Convergence test P-value:1.1e-11
+Optimizing with step length 1.
+The log-likelihood improved by 0.00579.
+Iteration 10 of at most 60:
+18 Convergence test P-value:3.4e-01
+Optimizing with step length 1.
+The log-likelihood improved by 0.0004536.
+Iteration 22 of at most 60:
+Convergence test P-value:5.2e-03
+Optimizing with step length 1.
+The log-likelihood improved by 0.001485.
+Iteration 11 of at most 60:
+Convergence test P-value:7.4e-01
+Convergence detected. Stopping.
+Optimizing with step length 1.
+The log-likelihood improved by 0.0001979.
+Starting Monte Carlo maximum likelihood estimation (MCMLE):
+Iteration 1 of at most 100:
+Convergence test P-value:4.8e-02
+Optimizing with step length 1.
+The log-likelihood improved by 0.0009652.
+Iteration 12 of at most 60:
+3 Convergence test P-value:8e-02
+Optimizing with step length 1.
+The log-likelihood improved by 0.0008296.
+Iteration 13 of at most 60:
+Convergence test P-value:1e-01
+Optimizing with step length 1.
+The log-likelihood improved by 0.000775.
+Iteration 14 of at most 60:
+Convergence test P-value:9.6e-01
+Convergence detected. Stopping.
+Optimizing with step length 1.
+The log-likelihood improved by < 0.0001.
+Starting Monte Carlo maximum likelihood estimation (MCMLE):
+Iteration 1 of at most 100:
+10 Optimizing with step length 0.81856022269868.
+The log-likelihood did not improve.
+Iteration 2 of at most 100:
+4 11 19 12 5 13 6 14 Optimizing with step length 0.739009574609117.
+The log-likelihood did not improve.
+Iteration 2 of at most 100:
+20 7 15 8 16 9 .
+This model was fit using MCMC.  To examine model diagnostics and check
+for degeneracy, use the mcmc.diagnostics() function.
+10 17 11 18 12 13 19 Optimizing with step length 0.688073725874679.
+The log-likelihood did not improve.
+Iteration 2 of at most 100:
+14 15 Optimizing with step length 0.687443148076549.
+The log-likelihood did not improve.
+Iteration 2 of at most 100:
+20 Optimizing with step length 0.900625647355012.
+The log-likelihood did not improve.
+Iteration 2 of at most 100:
+Optimizing with step length 0.727005263769831.
+The log-likelihood improved by 5.801.
+Iteration 3 of at most 100:
+16 .
+This model was fit using MCMC.  To examine model diagnostics and check
+for degeneracy, use the mcmc.diagnostics() function.
+Starting contrastive divergence estimation via CD-MCMLE:
+Iteration 1 of at most 60:
+Convergence test P-value:0e+00
+Optimizing with step length 0.798775331796327.
+The log-likelihood improved by 1.251.
+Iteration 2 of at most 60:
+Convergence test P-value:0e+00
+Optimizing with step length 0.965013107936343.
+The log-likelihood improved by 1.709.
+Iteration 3 of at most 60:
+Convergence test P-value:0e+00
+Optimizing with step length 1.
+The log-likelihood improved by 1.138.
+Iteration 4 of at most 60:
+Convergence test P-value:0e+00
+Optimizing with step length 1.
+The log-likelihood improved by 0.5545.
+Iteration 5 of at most 60:
+Convergence test P-value:0e+00
+Optimizing with step length 1.
+The log-likelihood improved by 0.2437.
+Iteration 6 of at most 60:
+Convergence test P-value:1.1e-217
+Optimizing with step length 1.
+The log-likelihood improved by 0.1188.
+Iteration 7 of at most 60:
+Convergence test P-value:1.2e-117
+Optimizing with step length 1.
+The log-likelihood improved by 0.0619.
+Iteration 8 of at most 60:
+Convergence test P-value:3.8e-54
+Optimizing with step length 1.
+The log-likelihood improved by 0.02718.
+Iteration 9 of at most 60:
+Convergence test P-value:2e-25
+17 Optimizing with step length 1.
+The log-likelihood improved by 0.01262.
+Iteration 10 of at most 60:
+Convergence test P-value:2e-10
+Optimizing with step length 1.
+The log-likelihood improved by 0.005265.
+Iteration 11 of at most 60:
+Convergence test P-value:4.2e-05
+Optimizing with step length 1.
+The log-likelihood improved by 0.002575.
+Iteration 12 of at most 60:
+Convergence test P-value:5.4e-01
+Convergence detected. Stopping.
+Optimizing with step length 1.
+The log-likelihood improved by 0.0003114.
+Starting Monte Carlo maximum likelihood estimation (MCMLE):
+Iteration 1 of at most 100:
+Optimizing with step length 0.550611035272186.
+The log-likelihood improved by 8.949.
+Iteration 3 of at most 100:
+18 19 20 Optimizing with step length 1.
+The log-likelihood improved by 1.921.
+Step length converged once. Increasing MCMC sample size.
+Iteration 3 of at most 100:
+Optimizing with step length 1.
+The log-likelihood improved by 2.863.
+Step length converged once. Increasing MCMC sample size.
+Iteration 3 of at most 100:
+Optimizing with step length 1.
+The log-likelihood did not improve.
+Step length converged once. Increasing MCMC sample size.
+Iteration 3 of at most 100:
+.
+This model was fit using MCMC.  To examine model diagnostics and check
+for degeneracy, use the mcmc.diagnostics() function.
+Starting contrastive divergence estimation via CD-MCMLE:
+Iteration 1 of at most 60:
+Convergence test P-value:0e+00
+Optimizing with step length 0.811461153800392.
+The log-likelihood improved by 1.253.
+Iteration 2 of at most 60:
+Convergence test P-value:0e+00
+Optimizing with step length 0.909966350972664.
+The log-likelihood improved by 1.51.
+Iteration 3 of at most 60:
+Convergence test P-value:0e+00
+Optimizing with step length 1.
+The log-likelihood improved by 1.487.
+Iteration 4 of at most 60:
+Convergence test P-value:0e+00
+Optimizing with step length 1.
+The log-likelihood improved by 0.8126.
+Iteration 5 of at most 60:
+Convergence test P-value:0e+00
+Optimizing with step length 1.
+The log-likelihood improved by 0.3882.
+Iteration 6 of at most 60:
+Convergence test P-value:0e+00
+Optimizing with step length 1.
+The log-likelihood improved by 0.2067.
+Iteration 7 of at most 60:
+Convergence test P-value:2.9e-139
+Optimizing with step length 1.
+The log-likelihood improved by 0.07191.
+Iteration 8 of at most 60:
+Convergence test P-value:8.4e-69
+Optimizing with step length 1.
+The log-likelihood improved by 0.03425.
+Iteration 9 of at most 60:
+Convergence test P-value:1.4e-26
+Optimizing with step length 1.
+The log-likelihood improved by 0.01302.
+Iteration 10 of at most 60:
+Convergence test P-value:3.7e-08
+Optimizing with step length 1.
+The log-likelihood improved by 0.004062.
+Iteration 11 of at most 60:
+Convergence test P-value:2.1e-04
+Optimizing with step length 1.
+The log-likelihood improved by 0.002198.
+Iteration 12 of at most 60:
+Convergence test P-value:2.4e-02
+Optimizing with step length 1.
+The log-likelihood improved by 0.001122.
+Iteration 13 of at most 60:
+Convergence test P-value:1.3e-06
+Optimizing with step length 1.
+The log-likelihood improved by 0.003299.
+Iteration 14 of at most 60:
+Convergence test P-value:3.5e-01
+Optimizing with step length 1.
+The log-likelihood improved by 0.0004413.
+Iteration 15 of at most 60:
+Convergence test P-value:8.3e-01
+Convergence detected. Stopping.
+Optimizing with step length 1.
+The log-likelihood improved by 0.0001461.
+Starting Monte Carlo maximum likelihood estimation (MCMLE):
+Iteration 1 of at most 100:
+Optimizing with step length 1.
+The log-likelihood improved by 1.92.
+Step length converged once. Increasing MCMC sample size.
+Iteration 4 of at most 100:
+Optimizing with step length 0.602589436164806.
+The log-likelihood did not improve.
+Iteration 2 of at most 100:
+Optimizing with step length 0.684226792424772.
+The log-likelihood improved by 5.225.
+Iteration 4 of at most 100:
+Optimizing with step length 0.790427402396388.
+The log-likelihood did not improve.
+Iteration 2 of at most 100:
+Optimizing with step length 0.969983977116248.
+The log-likelihood improved by 4.291.
+Iteration 3 of at most 100:
+Optimizing with step length 1.
+The log-likelihood improved by 2.132.
+Step length converged once. Increasing MCMC sample size.
+Iteration 5 of at most 100:
+Optimizing with step length 0.825984931514337.
+The log-likelihood improved by 7.126.
+Iteration 3 of at most 100:
+Optimizing with step length 1.
+The log-likelihood improved by 0.03738.
+Step length converged once. Increasing MCMC sample size.
+Iteration 4 of at most 100:
+Optimizing with step length 1.
+The log-likelihood improved by 1.166.
+Step length converged once. Increasing MCMC sample size.
+Iteration 4 of at most 100:
+Optimizing with step length 1.
+The log-likelihood improved by 0.05883.
+Step length converged twice. Stopping.
+Finished MCMLE.
+Note: Null model likelihood calculation is not implemented for valued
+ERGMs at this time.  This means that all likelihood-based inference
+(LRT, Analysis of Deviance, AIC, BIC, etc.) is only valid between
+models with the same reference distribution and constraints.
+Evaluating log-likelihood at the estimate. Using 20 bridges: 1 2 Optimizing with step length 1.
+The log-likelihood improved by 5.175.
+Step length converged twice. Stopping.
+Finished MCMLE.
+Note: Null model likelihood calculation is not implemented for valued
+ERGMs at this time.  This means that all likelihood-based inference
+(LRT, Analysis of Deviance, AIC, BIC, etc.) is only valid between
+models with the same reference distribution and constraints.
+Evaluating log-likelihood at the estimate. Using 20 bridges: 1 Optimizing with step length 1.
+The log-likelihood improved by 0.01204.
+Step length converged twice. Stopping.
+Finished MCMLE.
+Note: Null model likelihood calculation is not implemented for valued
+ERGMs at this time.  This means that all likelihood-based inference
+(LRT, Analysis of Deviance, AIC, BIC, etc.) is only valid between
+models with the same reference distribution and constraints.
+Evaluating log-likelihood at the estimate. Using 20 bridges: 1 3 2 2 4 3 3 5 Optimizing with step length 1.
+The log-likelihood improved by 0.07357.
+Step length converged twice. Stopping.
+Finished MCMLE.
+Note: Null model likelihood calculation is not implemented for valued
+ERGMs at this time.  This means that all likelihood-based inference
+(LRT, Analysis of Deviance, AIC, BIC, etc.) is only valid between
+models with the same reference distribution and constraints.
+Evaluating log-likelihood at the estimate. Using 20 bridges: 1 4 4 6 2 5 5 7 6 3 6 8 7 7 4 8 9 8 5 9 10 10 9 6 11 7 10 11 12 8 11 13 12 12 9 14 13 15 10 13 14 11 16 14 15 12 17 15 13 16 18 14 16 17 15 19 17 18 16 18 20 19 17 19 18 .
+This model was fit using MCMC.  To examine model diagnostics and check
+for degeneracy, use the mcmc.diagnostics() function.
+20 19 20 Optimizing with step length 1.
+The log-likelihood improved by 0.05684.
+Step length converged twice. Stopping.
+Finished MCMLE.
+Note: Null model likelihood calculation is not implemented for valued
+ERGMs at this time.  This means that all likelihood-based inference
+(LRT, Analysis of Deviance, AIC, BIC, etc.) is only valid between
+models with the same reference distribution and constraints.
+Evaluating log-likelihood at the estimate. Using 20 bridges: 1 .
+This model was fit using MCMC.  To examine model diagnostics and check
+for degeneracy, use the mcmc.diagnostics() function.
+2 Optimizing with step length 1.
+The log-likelihood improved by 0.005705.
+Step length converged twice. Stopping.
+Finished MCMLE.
+Note: Null model likelihood calculation is not implemented for valued
+ERGMs at this time.  This means that all likelihood-based inference
+(LRT, Analysis of Deviance, AIC, BIC, etc.) is only valid between
+models with the same reference distribution and constraints.
+Evaluating log-likelihood at the estimate. Using 20 bridges: 1 3 20 2 .
+This model was fit using MCMC.  To examine model diagnostics and check
+for degeneracy, use the mcmc.diagnostics() function.
+4 3 5 4 .
+This model was fit using MCMC.  To examine model diagnostics and check
+for degeneracy, use the mcmc.diagnostics() function.
+6 5 7 6 8 7 9 8 10 9 11 10 12 11 13 12 14 13 Optimizing with step length 1.
+The log-likelihood improved by 0.01407.
+Step length converged twice. Stopping.
+Finished MCMLE.
+Note: Null model likelihood calculation is not implemented for valued
+ERGMs at this time.  This means that all likelihood-based inference
+(LRT, Analysis of Deviance, AIC, BIC, etc.) is only valid between
+models with the same reference distribution and constraints.
+Evaluating log-likelihood at the estimate. Using 20 bridges: 1 15 2 14 16 3 15 17 4 16 5 18 6 17 7 19 18 8 9 19 10 20 11 20 12 .
+This model was fit using MCMC.  To examine model diagnostics and check
+for degeneracy, use the mcmc.diagnostics() function.
+13 .
+This model was fit using MCMC.  To examine model diagnostics and check
+for degeneracy, use the mcmc.diagnostics() function.
+14 15 16 17 18 19 20 .
+This model was fit using MCMC.  To examine model diagnostics and check
+for degeneracy, use the mcmc.diagnostics() function.
+> stopImplicitCluster()
+> save.image("results/precovid_full_ergms_75.Rdata")
+> 
+> ncores = 3
+> registerDoParallel(cores=ncores) 
+> ergms <- foreach(i=16:18, .errorhandling = 'pass') %dopar% {
++   net <- netlist[[i]]
++   set.seed(seed)
++   eval(ergm_postl0_covid)
++ }
+Starting contrastive divergence estimation via CD-MCMLE:
+Starting contrastive divergence estimation via CD-MCMLE:
+Starting contrastive divergence estimation via CD-MCMLE:
+Iteration 1 of at most 60:
+Iteration 1 of at most 60:
+Iteration 1 of at most 60:
+Convergence test P-value:0e+00
+Convergence test P-value:0e+00
+Convergence test P-value:0e+00
+Optimizing with step length 0.808771762774851.
+Optimizing with step length 0.674528596860696.
+Optimizing with step length 0.682989848627191.
+The log-likelihood improved by 1.294.
+Iteration 2 of at most 60:
+The log-likelihood improved by 0.8979.
+Iteration 2 of at most 60:
+The log-likelihood improved by 0.9027.
+Iteration 2 of at most 60:
+Convergence test P-value:0e+00
+Convergence test P-value:0e+00
+Convergence test P-value:0e+00
+Optimizing with step length 0.674745876388212.
+Optimizing with step length 0.858565002861852.
+Optimizing with step length 0.690470032900577.
+The log-likelihood improved by 0.8499.
+Iteration 3 of at most 60:
+The log-likelihood improved by 0.9157.
+Iteration 3 of at most 60:
+The log-likelihood improved by 1.186.
+Iteration 3 of at most 60:
+Convergence test P-value:0e+00
+Optimizing with step length 1.
+The log-likelihood improved by 1.407.
+Iteration 4 of at most 60:
+Convergence test P-value:0e+00
+Convergence test P-value:0e+00
+Optimizing with step length 0.679383360814415.
+The log-likelihood improved by 0.8932.
+Iteration 4 of at most 60:
+Optimizing with step length 0.686921472236616.
+The log-likelihood improved by 0.892.
+Iteration 4 of at most 60:
+Convergence test P-value:0e+00
+Optimizing with step length 1.
+The log-likelihood improved by 0.9116.
+Iteration 5 of at most 60:
+Convergence test P-value:0e+00
+Convergence test P-value:0e+00
+Optimizing with step length 0.691675096085726.
+The log-likelihood improved by 0.9384.
+Iteration 5 of at most 60:
+Optimizing with step length 0.685912480573503.
+The log-likelihood improved by 0.9202.
+Iteration 5 of at most 60:
+Convergence test P-value:0e+00
+Optimizing with step length 1.
+The log-likelihood improved by 0.4505.
+Iteration 6 of at most 60:
+Convergence test P-value:0e+00
+Convergence test P-value:0e+00
+Optimizing with step length 0.691370564381831.
+The log-likelihood improved by 0.8589.
+Iteration 6 of at most 60:
+Optimizing with step length 0.711252651616317.
+The log-likelihood improved by 0.9206.
+Iteration 6 of at most 60:
+Convergence test P-value:6.2e-306
+Optimizing with step length 1.
+The log-likelihood improved by 0.1801.
+Iteration 7 of at most 60:
+Convergence test P-value:0e+00
+Convergence test P-value:0e+00
+Optimizing with step length 0.689949517694558.
+The log-likelihood improved by 0.8584.
+Iteration 7 of at most 60:
+Optimizing with step length 0.688314163501292.
+The log-likelihood improved by 0.8815.
+Iteration 7 of at most 60:
+Convergence test P-value:2.3e-150
+Optimizing with step length 1.
+The log-likelihood improved by 0.08052.
+Iteration 8 of at most 60:
+Convergence test P-value:0e+00
+Convergence test P-value:0e+00
+Optimizing with step length 0.701992093515723.
+The log-likelihood improved by 0.8586.
+Iteration 8 of at most 60:
+Optimizing with step length 0.71024520128209.
+The log-likelihood improved by 0.8769.
+Iteration 8 of at most 60:
+Convergence test P-value:3.5e-75
+Optimizing with step length 1.
+The log-likelihood improved by 0.03914.
+Iteration 9 of at most 60:
+Convergence test P-value:0e+00
+Convergence test P-value:0e+00
+Optimizing with step length 0.717360838841966.
+The log-likelihood improved by 0.8926.
+Iteration 9 of at most 60:
+Optimizing with step length 0.706316994275739.
+The log-likelihood improved by 0.8415.
+Iteration 9 of at most 60:
+Convergence test P-value:2.3e-26
+Optimizing with step length 1.
+The log-likelihood improved by 0.01407.
+Iteration 10 of at most 60:
+Convergence test P-value:0e+00
+Convergence test P-value:0e+00
+Optimizing with step length 0.71916456369573.
+The log-likelihood improved by 0.863.
+Iteration 10 of at most 60:
+Optimizing with step length 0.708941575494843.
+The log-likelihood improved by 0.8404.
+Iteration 10 of at most 60:
+Convergence test P-value:6.3e-22
+Optimizing with step length 1.
+The log-likelihood improved by 0.01193.
+Iteration 11 of at most 60:
+Convergence test P-value:0e+00
+Convergence test P-value:0e+00
+Optimizing with step length 0.737640975396119.
+The log-likelihood improved by 0.8625.
+Iteration 11 of at most 60:
+Optimizing with step length 0.719008570760023.
+The log-likelihood improved by 0.8524.
+Iteration 11 of at most 60:
+Convergence test P-value:1.9e-10
+Optimizing with step length 1.
+The log-likelihood improved by 0.006016.
+Iteration 12 of at most 60:
+Convergence test P-value:0e+00
+Convergence test P-value:0e+00
+Convergence test P-value:2e-02
+Optimizing with step length 1.
+The log-likelihood improved by 0.001677.
+Iteration 13 of at most 60:
+Optimizing with step length 0.734451698725564.
+The log-likelihood improved by 0.7714.
+Iteration 12 of at most 60:
+Optimizing with step length 0.733344448175122.
+The log-likelihood improved by 0.8575.
+Iteration 12 of at most 60:
+Convergence test P-value:7.7e-03
+Optimizing with step length 1.
+The log-likelihood improved by 0.00191.
+Iteration 14 of at most 60:
+Convergence test P-value:0e+00
+Convergence test P-value:0e+00
+Optimizing with step length 0.736189651531691.
+The log-likelihood improved by 0.7597.
+Iteration 13 of at most 60:
+Optimizing with step length 0.714250029386921.
+The log-likelihood improved by 0.8005.
+Iteration 13 of at most 60:
+Convergence test P-value:9.4e-02
+Optimizing with step length 1.
+The log-likelihood improved by 0.001227.
+Iteration 15 of at most 60:
+Convergence test P-value:0e+00
+Convergence test P-value:0e+00
+Optimizing with step length 0.760795054997458.
+The log-likelihood improved by 0.793.
+Iteration 14 of at most 60:
+Optimizing with step length 0.743898444053782.
+The log-likelihood improved by 0.8244.
+Iteration 14 of at most 60:
+Convergence test P-value:7.4e-02
+Optimizing with step length 1.
+The log-likelihood improved by 0.001302.
+Iteration 16 of at most 60:
+Convergence test P-value:0e+00
+Convergence test P-value:0e+00
+Optimizing with step length 0.800187675766619.
+The log-likelihood improved by 0.8466.
+Iteration 15 of at most 60:
+Optimizing with step length 0.747330311448447.
+The log-likelihood improved by 0.7724.
+Iteration 15 of at most 60:
+Convergence test P-value:1.3e-01
+Optimizing with step length 1.
+The log-likelihood improved by 0.001137.
+Iteration 17 of at most 60:
+Convergence test P-value:0e+00
+Convergence test P-value:0e+00
+Optimizing with step length 0.7835901389896.
+The log-likelihood improved by 0.7298.
+Iteration 16 of at most 60:
+Optimizing with step length 0.774309038520714.
+The log-likelihood improved by 0.7906.
+Iteration 16 of at most 60:
+Convergence test P-value:4.6e-02
+Optimizing with step length 1.
+The log-likelihood improved by 0.001423.
+Iteration 18 of at most 60:
+Convergence test P-value:0e+00
+Convergence test P-value:0e+00
+Optimizing with step length 0.826450341972554.
+The log-likelihood improved by 0.7862.
+Iteration 17 of at most 60:
+Optimizing with step length 0.774240730996936.
+The log-likelihood improved by 0.7083.
+Iteration 17 of at most 60:
+Convergence test P-value:3.1e-01
+Optimizing with step length 1.
+The log-likelihood improved by 0.0008224.
+Iteration 19 of at most 60:
+Convergence test P-value:0e+00
+Convergence test P-value:0e+00
+Optimizing with step length 0.845759459618614.
+The log-likelihood improved by 0.7789.
+Iteration 18 of at most 60:
+Optimizing with step length 0.816713626982281.
+The log-likelihood improved by 0.8325.
+Iteration 18 of at most 60:
+Convergence test P-value:1.8e-03
+Optimizing with step length 1.
+The log-likelihood improved by 0.002312.
+Iteration 20 of at most 60:
+Convergence test P-value:0e+00
+Convergence test P-value:0e+00
+Optimizing with step length 0.886563089314696.
+The log-likelihood improved by 0.8292.
+Iteration 19 of at most 60:
+Optimizing with step length 0.849561555025587.
+The log-likelihood improved by 0.8405.
+Iteration 19 of at most 60:
+Convergence test P-value:1.2e-01
+Optimizing with step length 1.
+The log-likelihood improved by 0.001151.
+Iteration 21 of at most 60:
+Convergence test P-value:0e+00
+Convergence test P-value:0e+00
+Optimizing with step length 0.955269184746353.
+The log-likelihood improved by 0.9731.
+Iteration 20 of at most 60:
+Convergence test P-value:6e-05
+Optimizing with step length 0.896880387350279.
+Optimizing with step length 1.
+The log-likelihood improved by 0.003177.
+Iteration 22 of at most 60:
+The log-likelihood improved by 0.9113.
+Iteration 20 of at most 60:
+Convergence test P-value:4.9e-02
+Optimizing with step length 1.
+Convergence test P-value:0e+00
+The log-likelihood improved by 0.001408.
+Iteration 23 of at most 60:
+Optimizing with step length 1.
+Convergence test P-value:0e+00
+The log-likelihood improved by 0.7591.
+Iteration 21 of at most 60:
+Optimizing with step length 0.919922523960333.
+The log-likelihood improved by 0.9023.
+Iteration 21 of at most 60:
+Convergence test P-value:3.7e-02
+Optimizing with step length 1.
+The log-likelihood improved by 0.001503.
+Iteration 24 of at most 60:
+Convergence test P-value:0e+00
+Optimizing with step length 1.
+The log-likelihood improved by 0.4688.
+Iteration 22 of at most 60:
+Convergence test P-value:0e+00
+Optimizing with step length 1.
+The log-likelihood improved by 0.8792.
+Iteration 22 of at most 60:
+Convergence test P-value:4.6e-02
+Optimizing with step length 1.
+The log-likelihood improved by 0.001428.
+Iteration 25 of at most 60:
+Convergence test P-value:0e+00
+Optimizing with step length 1.
+The log-likelihood improved by 0.2322.
+Iteration 23 of at most 60:
+Convergence test P-value:0e+00
+Optimizing with step length 1.
+The log-likelihood improved by 0.5668.
+Iteration 23 of at most 60:
+Convergence test P-value:1.5e-02
+Optimizing with step length 1.
+The log-likelihood improved by 0.001721.
+Iteration 26 of at most 60:
+Convergence test P-value:2.2e-213
+Optimizing with step length 1.
+The log-likelihood improved by 0.1247.
+Iteration 24 of at most 60:
+Convergence test P-value:0e+00
+Optimizing with step length 1.
+The log-likelihood improved by 0.275.
+Iteration 24 of at most 60:
+Convergence test P-value:3e-01
+Optimizing with step length 1.
+The log-likelihood improved by 0.0008435.
+Iteration 27 of at most 60:
+Convergence test P-value:2.8e-127
+Optimizing with step length 1.
+The log-likelihood improved by 0.06956.
+Iteration 25 of at most 60:
+Convergence test P-value:3.1e-304
+Optimizing with step length 1.
+The log-likelihood improved by 0.1963.
+Iteration 25 of at most 60:
+Convergence test P-value:2.5e-01
+Optimizing with step length 1.
+The log-likelihood improved by 0.0009099.
+Iteration 28 of at most 60:
+Convergence test P-value:1.4e-68
+Optimizing with step length 1.
+The log-likelihood improved by 0.03585.
+Iteration 26 of at most 60:
+Convergence test P-value:1.2e-220
+Optimizing with step length 1.
+The log-likelihood improved by 0.1278.
+Iteration 26 of at most 60:
+Convergence test P-value:1.8e-03
+Optimizing with step length 1.
+The log-likelihood improved by 0.002285.
+Iteration 29 of at most 60:
+Convergence test P-value:2.5e-55
+Optimizing with step length 1.
+The log-likelihood improved by 0.02912.
+Iteration 27 of at most 60:
+Convergence test P-value:6.6e-171
+Optimizing with step length 1.
+The log-likelihood improved by 0.09563.
+Iteration 27 of at most 60:
+Convergence test P-value:2.5e-01
+Optimizing with step length 1.
+The log-likelihood improved by 0.0009044.
+Iteration 30 of at most 60:
+Convergence test P-value:1.1e-25
+Optimizing with step length 1.
+The log-likelihood improved by 0.01348.
+Iteration 28 of at most 60:
+Convergence test P-value:1.7e-92
+Optimizing with step length 1.
+The log-likelihood improved by 0.04782.
+Iteration 28 of at most 60:
+Convergence test P-value:5.4e-01
+Convergence detected. Stopping.
+Optimizing with step length 1.
+The log-likelihood improved by 0.0006039.
+Starting Monte Carlo maximum likelihood estimation (MCMLE):
+Iteration 1 of at most 100:
+Convergence test P-value:1.1e-14
+Optimizing with step length 1.
+The log-likelihood improved by 0.008068.
+Iteration 29 of at most 60:
+Convergence test P-value:3.1e-64
+Optimizing with step length 1.
+The log-likelihood improved by 0.03245.
+Iteration 29 of at most 60:
+Convergence test P-value:1.3e-08
+Optimizing with step length 1.
+The log-likelihood improved by 0.005016.
+Iteration 30 of at most 60:
+Convergence test P-value:6.1e-52
+Optimizing with step length 1.
+The log-likelihood improved by 0.02728.
+Iteration 30 of at most 60:
+Convergence test P-value:6.2e-07
+Optimizing with step length 1.
+The log-likelihood improved by 0.004219.
+Iteration 31 of at most 60:
+Convergence test P-value:1.8e-37
+Optimizing with step length 1.
+The log-likelihood improved by 0.02002.
+Iteration 31 of at most 60:
+Convergence test P-value:4.3e-04
+Optimizing with step length 1.
+The log-likelihood improved by 0.002593.
+Iteration 32 of at most 60:
+Convergence test P-value:3.7e-18
+Optimizing with step length 1.
+The log-likelihood improved by 0.009888.
+Iteration 32 of at most 60:
+Convergence test P-value:1.8e-02
+Convergence test P-value:1.2e-07
+Optimizing with step length 1.
+Optimizing with step length 1.
+The log-likelihood improved by 0.004488.
+Iteration 33 of at most 60:
+The log-likelihood improved by 0.001692.
+Iteration 33 of at most 60:
+Convergence test P-value:2.9e-12
+Optimizing with step length 1.
+The log-likelihood improved by 0.006919.
+Iteration 34 of at most 60:
+Convergence test P-value:2.2e-01
+Optimizing with step length 1.
+The log-likelihood improved by 0.000951.
+Iteration 34 of at most 60:
+Convergence test P-value:5.3e-07
+Optimizing with step length 1.
+The log-likelihood improved by 0.004136.
+Iteration 35 of at most 60:
+Convergence test P-value:2.4e-01
+Optimizing with step length 1.
+The log-likelihood improved by 0.0009176.
+Iteration 35 of at most 60:
+Convergence test P-value:1.4e-03
+Optimizing with step length 1.
+The log-likelihood improved by 0.002349.
+Iteration 36 of at most 60:
+Convergence test P-value:1.2e-01
+Optimizing with step length 1.
+The log-likelihood improved by 0.00116.
+Iteration 36 of at most 60:
+Convergence test P-value:7.2e-04
+Optimizing with step length 1.
+The log-likelihood improved by 0.002539.
+Iteration 37 of at most 60:
+Convergence test P-value:1.2e-01
+Optimizing with step length 1.
+The log-likelihood improved by 0.001144.
+Iteration 37 of at most 60:
+Convergence test P-value:6.2e-03
+Optimizing with step length 1.
+The log-likelihood improved by 0.00197.
+Iteration 38 of at most 60:
+Convergence test P-value:7.9e-01
+Convergence detected. Stopping.
+Optimizing with step length 1.
+The log-likelihood improved by 0.000394.
+Starting Monte Carlo maximum likelihood estimation (MCMLE):
+Iteration 1 of at most 100:
+Convergence test P-value:5.1e-01
+Convergence detected. Stopping.
+Optimizing with step length 1.
+The log-likelihood improved by 0.0006264.
+Starting Monte Carlo maximum likelihood estimation (MCMLE):
+Iteration 1 of at most 100:
+Optimizing with step length 0.917528475487807.
+The log-likelihood improved by 19.85.
+Iteration 2 of at most 100:
+Optimizing with step length 0.873042970650807.
+The log-likelihood did not improve.
+Iteration 2 of at most 100:
+Optimizing with step length 0.648896433296581.
+The log-likelihood did not improve.
+Iteration 2 of at most 100:
+Optimizing with step length 0.0711227068929154.
+The log-likelihood improved by 3.852.
+Iteration 3 of at most 100:
+Optimizing with step length 0.0403986423834222.
+The log-likelihood improved by 3.009.
+Iteration 3 of at most 100:
+Optimizing with step length 0.658649270573451.
+The log-likelihood improved by 5.079.
+Iteration 3 of at most 100:
+Optimizing with step length 0.035398238199703.
+The log-likelihood improved by 1.275.
+Iteration 4 of at most 100:
+Optimizing with step length 0.0317891945808615.
+The log-likelihood improved by 3.67.
+Iteration 4 of at most 100:
+Optimizing with step length 1.
+The log-likelihood improved by 1.284.
+Step length converged once. Increasing MCMC sample size.
+Iteration 4 of at most 100:
+Optimizing with step length 0.0329796873769982.
+The log-likelihood improved by 1.425.
+Iteration 5 of at most 100:
+Optimizing with step length 0.0151638367419177.
+The log-likelihood improved by 1.975.
+Iteration 5 of at most 100:
+Optimizing with step length 0.049533183116487.
+The log-likelihood improved by 1.159.
+Iteration 6 of at most 100:
+Optimizing with step length 0.0550752249165136.
+The log-likelihood improved by 2.85.
+Iteration 6 of at most 100:
+Optimizing with step length 0.0516558960903342.
+The log-likelihood improved by 2.286.
+Iteration 7 of at most 100:
+Optimizing with step length 0.0574367649271853.
+The log-likelihood improved by 2.756.
+Iteration 7 of at most 100:
+Optimizing with step length 0.0519375547074578.
+The log-likelihood improved by 1.208.
+Iteration 8 of at most 100:
+Optimizing with step length 0.0713028775972396.
+The log-likelihood improved by 3.207.
+Iteration 8 of at most 100:
+Optimizing with step length 0.0503068010548054.
+The log-likelihood improved by 1.701.
+Iteration 9 of at most 100:
+Optimizing with step length 0.0537796879412225.
+The log-likelihood improved by 1.716.
+Iteration 9 of at most 100:
+Optimizing with step length 1.
+The log-likelihood improved by 0.02834.
+Step length converged twice. Stopping.
+Finished MCMLE.
+Note: Null model likelihood calculation is not implemented for valued
+ERGMs at this time.  This means that all likelihood-based inference
+(LRT, Analysis of Deviance, AIC, BIC, etc.) is only valid between
+models with the same reference distribution and constraints.
+Evaluating log-likelihood at the estimate. Using 20 bridges: 1 2 3 4 Optimizing with step length 0.0725542679779778.
+The log-likelihood improved by 3.238.
+Iteration 10 of at most 100:
+5 6 7 8 Optimizing with step length 0.110353646134922.
+The log-likelihood improved by 2.349.
+Iteration 10 of at most 100:
+9 10 11 12 13 14 Optimizing with step length 0.0932809757081776.
+The log-likelihood improved by 2.154.
+Iteration 11 of at most 100:
+15 16 17 Optimizing with step length 0.106159508979893.
+The log-likelihood improved by 2.097.
+Iteration 11 of at most 100:
+18 19 20 Optimizing with step length 0.0505759182772795.
+The log-likelihood improved by 1.535.
+Iteration 12 of at most 100:
+.
+This model was fit using MCMC.  To examine model diagnostics and check
+for degeneracy, use the mcmc.diagnostics() function.
+Optimizing with step length 0.135977037772693.
+The log-likelihood improved by 1.578.
+Iteration 12 of at most 100:
+Optimizing with step length 0.101092498769046.
+The log-likelihood improved by 2.132.
+Iteration 13 of at most 100:
+Optimizing with step length 0.116168546429412.
+The log-likelihood improved by 3.451.
+Iteration 13 of at most 100:
+Optimizing with step length 0.0805861206936519.
+The log-likelihood improved by 3.116.
+Iteration 14 of at most 100:
+Optimizing with step length 0.207283619610592.
+The log-likelihood improved by 1.077.
+Iteration 14 of at most 100:
+Optimizing with step length 0.15448449951741.
+The log-likelihood improved by 2.087.
+Iteration 15 of at most 100:
+Optimizing with step length 0.32262150152458.
+The log-likelihood improved by 2.417.
+Iteration 15 of at most 100:
+Optimizing with step length 0.190199132762275.
+The log-likelihood improved by 2.527.
+Iteration 16 of at most 100:
+Optimizing with step length 0.403872620319469.
+The log-likelihood improved by 1.77.
+Iteration 16 of at most 100:
+Optimizing with step length 0.215647109617095.
+The log-likelihood improved by 3.93.
+Iteration 17 of at most 100:
+Optimizing with step length 1.
+The log-likelihood improved by 2.653.
+Step length converged once. Increasing MCMC sample size.
+Iteration 17 of at most 100:
+Optimizing with step length 0.386898881477326.
+The log-likelihood improved by 1.781.
+Iteration 18 of at most 100:
+Optimizing with step length 0.302600521317733.
+The log-likelihood improved by 1.55.
+Iteration 19 of at most 100:
+Optimizing with step length 0.61037010875797.
+The log-likelihood improved by 2.871.
+Iteration 20 of at most 100:
+Optimizing with step length 0.746269953751326.
+The log-likelihood improved by 2.815.
+Iteration 21 of at most 100:
+Optimizing with step length 1.
+The log-likelihood improved by 1.26.
+Step length converged twice. Stopping.
+Finished MCMLE.
+Note: Null model likelihood calculation is not implemented for valued
+ERGMs at this time.  This means that all likelihood-based inference
+(LRT, Analysis of Deviance, AIC, BIC, etc.) is only valid between
+models with the same reference distribution and constraints.
+Evaluating log-likelihood at the estimate. Using 20 bridges: 1 2 3 4 5 6 7 8 Optimizing with step length 1.
+The log-likelihood improved by 0.1831.
+Step length converged once. Increasing MCMC sample size.
+Iteration 22 of at most 100:
+9 10 11 12 13 14 15 16 17 18 19 20 .
+This model was fit using MCMC.  To examine model diagnostics and check
+for degeneracy, use the mcmc.diagnostics() function.
+Optimizing with step length 1.
+The log-likelihood improved by 0.439.
+Step length converged twice. Stopping.
+Finished MCMLE.
+Note: Null model likelihood calculation is not implemented for valued
+ERGMs at this time.  This means that all likelihood-based inference
+(LRT, Analysis of Deviance, AIC, BIC, etc.) is only valid between
+models with the same reference distribution and constraints.
+Evaluating log-likelihood at the estimate. Using 20 bridges: 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 .
+This model was fit using MCMC.  To examine model diagnostics and check
+for degeneracy, use the mcmc.diagnostics() function.
+> stopImplicitCluster()
+> save.image("results/postcovidl0_full_ergms_75.Rdata")
+> 
+> ncores = 3
+> registerDoParallel(cores=ncores) 
+> ergms <- foreach(i=19:21, .errorhandling = 'pass') %dopar% {
++   net <- netlist[[i]]
++   set.seed(seed)
++   eval(ergm_postl3_covid)
++ }
+Starting contrastive divergence estimation via CD-MCMLE:
+Starting contrastive divergence estimation via CD-MCMLE:
+Starting contrastive divergence estimation via CD-MCMLE:
+Iteration 1 of at most 60:
+Iteration 1 of at most 60:
+Iteration 1 of at most 60:
+Convergence test P-value:0e+00
+Convergence test P-value:0e+00
+Convergence test P-value:0e+00
+Optimizing with step length 0.687443148076549.
+Optimizing with step length 0.69058237290646.
+The log-likelihood improved by 0.9277.
+Iteration 2 of at most 60:
+The log-likelihood improved by 0.9606.
+Iteration 2 of at most 60:
+Optimizing with step length 0.720287763085743.
+The log-likelihood improved by 1.079.
+Iteration 2 of at most 60:
+Convergence test P-value:0e+00
+Convergence test P-value:0e+00
+Convergence test P-value:0e+00
+Optimizing with step length 0.709779307423342.
+The log-likelihood improved by 0.989.
+Iteration 3 of at most 60:
+Optimizing with step length 0.696734414245406.
+The log-likelihood improved by 0.9358.
+Iteration 3 of at most 60:
+Optimizing with step length 0.743689079030442.
+The log-likelihood improved by 1.058.
+Iteration 3 of at most 60:
+Convergence test P-value:0e+00
+Convergence test P-value:0e+00
+Convergence test P-value:0e+00
+Optimizing with step length 0.721323149838165.
+The log-likelihood improved by 0.9767.
+Iteration 4 of at most 60:
+Optimizing with step length 0.712906284725369.
+The log-likelihood improved by 0.9292.
+Iteration 4 of at most 60:
+Optimizing with step length 0.765964133924251.
+The log-likelihood improved by 1.062.
+Iteration 4 of at most 60:
+Convergence test P-value:0e+00
+Convergence test P-value:0e+00
+Convergence test P-value:0e+00
+Optimizing with step length 0.732275736175896.
+The log-likelihood improved by 1.019.
+Iteration 5 of at most 60:
+Optimizing with step length 0.715318622610042.
+Optimizing with step length 0.833924046330923.
+The log-likelihood improved by 0.9424.
+Iteration 5 of at most 60:
+The log-likelihood improved by 1.274.
+Iteration 5 of at most 60:
+Convergence test P-value:0e+00
+Convergence test P-value:0e+00
+Convergence test P-value:0e+00
+Optimizing with step length 0.749775942662838.
+The log-likelihood improved by 0.9277.
+Iteration 6 of at most 60:
+Optimizing with step length 0.715548300335041.
+The log-likelihood improved by 0.8872.
+Iteration 6 of at most 60:
+Optimizing with step length 0.827746466798365.
+The log-likelihood improved by 1.068.
+Iteration 6 of at most 60:
+Convergence test P-value:0e+00
+Convergence test P-value:0e+00
+Convergence test P-value:0e+00
+Optimizing with step length 0.781406238111899.
+The log-likelihood improved by 0.9844.
+Iteration 7 of at most 60:
+Optimizing with step length 0.756151579252288.
+Optimizing with step length 0.894505982273827.
+The log-likelihood improved by 0.9893.
+Iteration 7 of at most 60:
+The log-likelihood improved by 1.161.
+Iteration 7 of at most 60:
+Convergence test P-value:0e+00
+Convergence test P-value:0e+00
+Convergence test P-value:0e+00
+Optimizing with step length 1.
+The log-likelihood improved by 1.241.
+Iteration 8 of at most 60:
+Optimizing with step length 0.832321980091105.
+The log-likelihood improved by 1.019.
+Iteration 8 of at most 60:
+Optimizing with step length 0.771291864841468.
+The log-likelihood improved by 0.9257.
+Iteration 8 of at most 60:
+Convergence test P-value:0e+00
+Optimizing with step length 1.
+The log-likelihood improved by 0.8158.
+Iteration 9 of at most 60:
+Convergence test P-value:0e+00
+Convergence test P-value:0e+00
+Optimizing with step length 0.867805938628567.
+The log-likelihood improved by 1.034.
+Iteration 9 of at most 60:
+Optimizing with step length 0.796561197528533.
+The log-likelihood improved by 0.9317.
+Iteration 9 of at most 60:
+Convergence test P-value:0e+00
+Optimizing with step length 1.
+The log-likelihood improved by 0.4182.
+Iteration 10 of at most 60:
+Convergence test P-value:0e+00
+Convergence test P-value:0e+00
+Optimizing with step length 0.976061221228994.
+The log-likelihood improved by 1.218.
+Iteration 10 of at most 60:
+Optimizing with step length 0.815338882327471.
+The log-likelihood improved by 0.8586.
+Iteration 10 of at most 60:
+Convergence test P-value:1.4e-312
+Optimizing with step length 1.
+The log-likelihood improved by 0.1951.
+Iteration 11 of at most 60:
+Convergence test P-value:0e+00
+Optimizing with step length 1.
+The log-likelihood improved by 0.8914.
+Iteration 11 of at most 60:
+Convergence test P-value:0e+00
+Optimizing with step length 0.808367676946704.
+The log-likelihood improved by 0.7371.
+Iteration 11 of at most 60:
+Convergence test P-value:1.9e-173
+Optimizing with step length 1.
+The log-likelihood improved by 0.09983.
+Iteration 12 of at most 60:
+Convergence test P-value:0e+00
+Optimizing with step length 1.
+The log-likelihood improved by 0.392.
+Iteration 12 of at most 60:
+Convergence test P-value:0e+00
+Optimizing with step length 0.921248159399997.
+The log-likelihood improved by 1.019.
+Iteration 12 of at most 60:
+Convergence test P-value:4.2e-81
+Optimizing with step length 1.
+The log-likelihood improved by 0.04348.
+Iteration 13 of at most 60:
+Convergence test P-value:9.3e-310
+Optimizing with step length 1.
+The log-likelihood improved by 0.1989.
+Iteration 13 of at most 60:
+Convergence test P-value:0e+00
+Optimizing with step length 1.
+The log-likelihood improved by 1.184.
+Iteration 13 of at most 60:
+Convergence test P-value:7.9e-52
+Optimizing with step length 1.
+The log-likelihood improved by 0.02807.
+Iteration 14 of at most 60:
+Convergence test P-value:2.2e-141
+Optimizing with step length 1.
+The log-likelihood improved by 0.07944.
+Iteration 14 of at most 60:
+Convergence test P-value:0e+00
+Optimizing with step length 1.
+The log-likelihood improved by 0.6737.
+Iteration 14 of at most 60:
+Convergence test P-value:3.1e-11
+Optimizing with step length 1.
+The log-likelihood improved by 0.006976.
+Iteration 15 of at most 60:
+Convergence test P-value:1.4e-73
+Optimizing with step length 1.
+The log-likelihood improved by 0.0389.
+Iteration 15 of at most 60:
+Convergence test P-value:0e+00
+Optimizing with step length 1.
+The log-likelihood improved by 0.3833.
+Iteration 15 of at most 60:
+Convergence test P-value:1.7e-05
+Optimizing with step length 1.
+The log-likelihood improved by 0.00387.
+Iteration 16 of at most 60:
+Convergence test P-value:2.3e-32
+Optimizing with step length 1.
+The log-likelihood improved by 0.01772.
+Iteration 16 of at most 60:
+Convergence test P-value:1.3e-314
+Optimizing with step length 1.
+The log-likelihood improved by 0.196.
+Iteration 16 of at most 60:
+Convergence test P-value:1.2e-05
+Optimizing with step length 1.
+The log-likelihood improved by 0.003999.
+Iteration 17 of at most 60:
+Convergence test P-value:2.6e-20
+Optimizing with step length 1.
+The log-likelihood improved by 0.01159.
+Iteration 17 of at most 60:
+Convergence test P-value:1.3e-211
+Optimizing with step length 1.
+The log-likelihood improved by 0.1216.
+Iteration 17 of at most 60:
+Convergence test P-value:1.8e-01
+Optimizing with step length 1.
+The log-likelihood improved by 0.001266.
+Iteration 18 of at most 60:
+Convergence test P-value:3.1e-08
+Optimizing with step length 1.
+The log-likelihood improved by 0.005356.
+Iteration 18 of at most 60:
+Convergence test P-value:2.2e-118
+Optimizing with step length 1.
+The log-likelihood improved by 0.06333.
+Iteration 18 of at most 60:
+Convergence test P-value:6.6e-03
+Optimizing with step length 1.
+The log-likelihood improved by 0.002289.
+Iteration 19 of at most 60:
+Convergence test P-value:7.3e-05
+Optimizing with step length 1.
+The log-likelihood improved by 0.003475.
+Iteration 19 of at most 60:
+Convergence test P-value:8.7e-58
+Optimizing with step length 1.
+The log-likelihood improved by 0.03129.
+Iteration 19 of at most 60:
+Convergence test P-value:4.8e-02
+Optimizing with step length 1.
+The log-likelihood improved by 0.001733.
+Iteration 20 of at most 60:
+Convergence test P-value:2.9e-05
+Optimizing with step length 1.
+The log-likelihood improved by 0.003724.
+Iteration 20 of at most 60:
+Convergence test P-value:1.4e-22
+Optimizing with step length 1.
+The log-likelihood improved by 0.01269.
+Iteration 20 of at most 60:
+Convergence test P-value:6.1e-01
+Convergence detected. Stopping.
+Optimizing with step length 1.
+The log-likelihood improved by 0.0007242.
+Starting Monte Carlo maximum likelihood estimation (MCMLE):
+Iteration 1 of at most 100:
+Convergence test P-value:1.1e-02
+Optimizing with step length 1.
+The log-likelihood improved by 0.002147.
+Iteration 21 of at most 60:
+Convergence test P-value:8.1e-19
+Optimizing with step length 1.
+The log-likelihood improved by 0.01082.
+Iteration 21 of at most 60:
+Convergence test P-value:3.6e-02
+Optimizing with step length 1.
+The log-likelihood improved by 0.001807.
+Iteration 22 of at most 60:
+Convergence test P-value:1.9e-09
+Optimizing with step length 1.
+The log-likelihood improved by 0.005998.
+Iteration 22 of at most 60:
+Convergence test P-value:1.1e-01
+Optimizing with step length 1.
+The log-likelihood improved by 0.001457.
+Iteration 23 of at most 60:
+Convergence test P-value:6.5e-04
+Optimizing with step length 1.
+The log-likelihood improved by 0.002895.
+Iteration 23 of at most 60:
+Convergence test P-value:1.2e-01
+Optimizing with step length 1.
+The log-likelihood improved by 0.001399.
+Iteration 24 of at most 60:
+Convergence test P-value:1.8e-03
+Optimizing with step length 1.
+The log-likelihood improved by 0.002642.
+Iteration 24 of at most 60:
+Convergence test P-value:3.2e-01
+Optimizing with step length 1.
+The log-likelihood improved by 0.001034.
+Iteration 25 of at most 60:
+Convergence test P-value:3.2e-05
+Optimizing with step length 1.
+The log-likelihood improved by 0.003654.
+Iteration 25 of at most 60:
+Convergence test P-value:8.9e-01
+Convergence detected. Stopping.
+Optimizing with step length 1.
+The log-likelihood improved by 0.000436.
+Starting Monte Carlo maximum likelihood estimation (MCMLE):
+Iteration 1 of at most 100:
+Convergence test P-value:2.6e-01
+Optimizing with step length 1.
+The log-likelihood improved by 0.001133.
+Iteration 26 of at most 60:
+Convergence test P-value:1e-03
+Optimizing with step length 1.
+The log-likelihood improved by 0.002774.
+Iteration 27 of at most 60:
+Convergence test P-value:1.6e-01
+Optimizing with step length 1.
+The log-likelihood improved by 0.001317.
+Iteration 28 of at most 60:
+Convergence test P-value:2.2e-02
+Optimizing with step length 1.
+The log-likelihood improved by 0.001953.
+Iteration 29 of at most 60:
+Convergence test P-value:3.3e-03
+Optimizing with step length 1.
+The log-likelihood improved by 0.002485.
+Iteration 30 of at most 60:
+Convergence test P-value:3.4e-03
+Optimizing with step length 1.
+The log-likelihood improved by 0.002475.
+Iteration 31 of at most 60:
+Convergence test P-value:6.1e-01
+Convergence detected. Stopping.
+Optimizing with step length 1.
+The log-likelihood improved by 0.0007311.
+Starting Monte Carlo maximum likelihood estimation (MCMLE):
+Iteration 1 of at most 100:
+Optimizing with step length 0.763333305917961.
+The log-likelihood did not improve.
+Iteration 2 of at most 100:
+Optimizing with step length 0.694305288429223.
+The log-likelihood did not improve.
+Iteration 2 of at most 100:
+Optimizing with step length 0.757784094408825.
+The log-likelihood improved by 16.18.
+Iteration 2 of at most 100:
+Optimizing with step length 0.299497966347263.
+The log-likelihood improved by 3.146.
+Iteration 3 of at most 100:
+Optimizing with step length 0.365865289744254.
+The log-likelihood improved by 2.486.
+Iteration 3 of at most 100:
+Optimizing with step length 1.
+The log-likelihood improved by 1.973.
+Step length converged once. Increasing MCMC sample size.
+Iteration 3 of at most 100:
+Optimizing with step length 0.387390069964773.
+The log-likelihood improved by 3.044.
+Iteration 4 of at most 100:
+Optimizing with step length 0.647583953250932.
+The log-likelihood improved by 3.265.
+Iteration 4 of at most 100:
+Optimizing with step length 0.700444963187894.
+The log-likelihood improved by 4.071.
+Iteration 5 of at most 100:
+Optimizing with step length 1.
+The log-likelihood improved by 0.8543.
+Step length converged once. Increasing MCMC sample size.
+Iteration 5 of at most 100:
+Optimizing with step length 1.
+The log-likelihood improved by 1.488.
+Step length converged once. Increasing MCMC sample size.
+Iteration 6 of at most 100:
+Optimizing with step length 1.
+The log-likelihood improved by 0.04411.
+Step length converged twice. Stopping.
+Finished MCMLE.
+Note: Null model likelihood calculation is not implemented for valued
+ERGMs at this time.  This means that all likelihood-based inference
+(LRT, Analysis of Deviance, AIC, BIC, etc.) is only valid between
+models with the same reference distribution and constraints.
+Evaluating log-likelihood at the estimate. Using 20 bridges: 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 .
+This model was fit using MCMC.  To examine model diagnostics and check
+for degeneracy, use the mcmc.diagnostics() function.
+Optimizing with step length 1.
+The log-likelihood improved by 0.0931.
+Step length converged twice. Stopping.
+Finished MCMLE.
+Note: Null model likelihood calculation is not implemented for valued
+ERGMs at this time.  This means that all likelihood-based inference
+(LRT, Analysis of Deviance, AIC, BIC, etc.) is only valid between
+models with the same reference distribution and constraints.
+Evaluating log-likelihood at the estimate. Using 20 bridges: 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 Optimizing with step length 1.
+The log-likelihood improved by 0.05654.
+Step length converged twice. Stopping.
+Finished MCMLE.
+Note: Null model likelihood calculation is not implemented for valued
+ERGMs at this time.  This means that all likelihood-based inference
+(LRT, Analysis of Deviance, AIC, BIC, etc.) is only valid between
+models with the same reference distribution and constraints.
+Evaluating log-likelihood at the estimate. Using 20 bridges: 1 2 20 3 4 5 .
+This model was fit using MCMC.  To examine model diagnostics and check
+for degeneracy, use the mcmc.diagnostics() function.
+6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 .
+This model was fit using MCMC.  To examine model diagnostics and check
+for degeneracy, use the mcmc.diagnostics() function.
+> stopImplicitCluster()
+> save.image("results/postcovidl3_full_ergms_75.Rdata")
+> 
+> ncores = 8
+> registerDoParallel(cores=ncores) 
+> ergms <- foreach(i=22:36, .errorhandling = 'pass') %dopar% {
++   net <- netlist[[i]]
++   set.seed(seed)
++   eval(ergm_postl6_covid)
++ }
+Starting contrastive divergence estimation via CD-MCMLE:
+Iteration 1 of at most 60:
+Starting contrastive divergence estimation via CD-MCMLE:
+Iteration 1 of at most 60:
+Starting contrastive divergence estimation via CD-MCMLE:
+Starting contrastive divergence estimation via CD-MCMLE:
+Iteration 1 of at most 60:
+Iteration 1 of at most 60:
+Starting contrastive divergence estimation via CD-MCMLE:
+Starting contrastive divergence estimation via CD-MCMLE:
+Starting contrastive divergence estimation via CD-MCMLE:
+Iteration 1 of at most 60:
+Iteration 1 of at most 60:
+Starting contrastive divergence estimation via CD-MCMLE:
+Iteration 1 of at most 60:
+Iteration 1 of at most 60:
+Convergence test P-value:0e+00
+Convergence test P-value:0e+00
+Convergence test P-value:0e+00
+Convergence test P-value:0e+00
+Convergence test P-value:0e+00
+Optimizing with step length 0.774196301779503.
+Optimizing with step length 0.808771762774851.
+The log-likelihood improved by 1.133.
+Iteration 2 of at most 60:
+The log-likelihood improved by 1.354.
+Iteration 2 of at most 60:
+Optimizing with step length 0.727571272620488.
+Convergence test P-value:0e+00
+Convergence test P-value:0e+00
+Convergence test P-value:0e+00
+The log-likelihood improved by 1.072.
+Iteration 2 of at most 60:
+Optimizing with step length 0.788550293331902.
+The log-likelihood improved by 1.231.
+Iteration 2 of at most 60:
+Optimizing with step length 0.781913943074415.
+The log-likelihood improved by 1.181.
+Iteration 2 of at most 60:
+Optimizing with step length 0.705795714923083.
+The log-likelihood improved by 0.9876.
+Iteration 2 of at most 60:
+Optimizing with step length 0.735780736066789.
+The log-likelihood improved by 1.111.
+Iteration 2 of at most 60:
+Optimizing with step length 0.736860401351993.
+The log-likelihood improved by 1.04.
+Iteration 2 of at most 60:
+Convergence test P-value:0e+00
+Convergence test P-value:0e+00
+Convergence test P-value:0e+00
+Convergence test P-value:0e+00
+Convergence test P-value:0e+00
+Optimizing with step length 0.769311050722952.
+The log-likelihood improved by 1.096.
+Iteration 3 of at most 60:
+Optimizing with step length 0.816261835057045.
+The log-likelihood improved by 1.175.
+Iteration 3 of at most 60:
+Optimizing with step length 0.794815959022809.
+The log-likelihood improved by 1.082.
+Iteration 3 of at most 60:
+Optimizing with step length 0.80402965004852.
+The log-likelihood improved by 1.192.
+Iteration 3 of at most 60:
+Optimizing with step length 0.775878827155988.
+The log-likelihood improved by 1.085.
+Iteration 3 of at most 60:
+Convergence test P-value:0e+00
+Convergence test P-value:0e+00
+Convergence test P-value:0e+00
+Optimizing with step length 0.721391607211612.
+The log-likelihood improved by 0.9804.
+Iteration 3 of at most 60:
+Optimizing with step length 0.747566026232649.
+The log-likelihood improved by 1.042.
+Iteration 3 of at most 60:
+Optimizing with step length 0.722213860817073.
+The log-likelihood improved by 0.9596.
+Iteration 3 of at most 60:
+Convergence test P-value:0e+00
+Convergence test P-value:0e+00
+Convergence test P-value:0e+00
+Convergence test P-value:0e+00
+Convergence test P-value:0e+00
+Optimizing with step length 0.889250291658711.
+The log-likelihood improved by 1.206.
+Iteration 4 of at most 60:
+Optimizing with step length 0.803616038974997.
+The log-likelihood improved by 1.075.
+Iteration 4 of at most 60:
+Optimizing with step length 0.89487182970655.
+The log-likelihood improved by 1.325.
+Iteration 4 of at most 60:
+Optimizing with step length 0.924179777404724.
+The log-likelihood improved by 1.325.
+Iteration 4 of at most 60:
+Optimizing with step length 0.830574531491853.
+The log-likelihood improved by 1.116.
+Iteration 4 of at most 60:
+Convergence test P-value:0e+00
+Convergence test P-value:0e+00
+Convergence test P-value:0e+00
+Optimizing with step length 0.715546291836762.
+The log-likelihood improved by 0.9423.
+Iteration 4 of at most 60:
+Optimizing with step length 0.765845827120628.
+The log-likelihood improved by 1.009.
+Iteration 4 of at most 60:
+Optimizing with step length 0.763328850696533.
+The log-likelihood improved by 1.069.
+Iteration 4 of at most 60:
+Convergence test P-value:0e+00
+Convergence test P-value:0e+00
+Optimizing with step length 1.
+The log-likelihood improved by 1.198.
+Iteration 5 of at most 60:
+Convergence test P-value:0e+00
+Optimizing with step length 1.
+The log-likelihood improved by 1.306.
+Iteration 5 of at most 60:
+Convergence test P-value:0e+00
+Optimizing with step length 1.
+The log-likelihood improved by 1.14.
+Iteration 5 of at most 60:
+Optimizing with step length 0.879498586269427.
+The log-likelihood improved by 1.245.
+Iteration 5 of at most 60:
+Convergence test P-value:0e+00
+Optimizing with step length 0.955218242734466.
+The log-likelihood improved by 1.424.
+Iteration 5 of at most 60:
+Convergence test P-value:0e+00
+Convergence test P-value:0e+00
+Convergence test P-value:0e+00
+Optimizing with step length 0.764065319114625.
+The log-likelihood improved by 1.033.
+Iteration 5 of at most 60:
+Optimizing with step length 0.830365513806017.
+The log-likelihood improved by 1.228.
+Iteration 5 of at most 60:
+Optimizing with step length 0.795047393482783.
+The log-likelihood improved by 1.102.
+Iteration 5 of at most 60:
+Convergence test P-value:0e+00
+Optimizing with step length 1.
+The log-likelihood improved by 0.5983.
+Iteration 6 of at most 60:
+Convergence test P-value:0e+00
+Optimizing with step length 1.
+The log-likelihood improved by 0.7177.
+Iteration 6 of at most 60:
+Convergence test P-value:0e+00
+Optimizing with step length 1.
+The log-likelihood improved by 0.5768.
+Iteration 6 of at most 60:
+Convergence test P-value:0e+00
+Optimizing with step length 0.888237688161893.
+The log-likelihood improved by 1.027.
+Iteration 6 of at most 60:
+Convergence test P-value:0e+00
+Optimizing with step length 1.
+The log-likelihood improved by 0.9781.
+Iteration 6 of at most 60:
+Convergence test P-value:0e+00
+Convergence test P-value:0e+00
+Convergence test P-value:0e+00
+Optimizing with step length 0.917363856714516.
+The log-likelihood improved by 1.284.
+Iteration 6 of at most 60:
+Optimizing with step length 0.751876664193238.
+The log-likelihood improved by 0.9053.
+Iteration 6 of at most 60:
+Optimizing with step length 0.803668076018744.
+The log-likelihood improved by 0.9718.
+Iteration 6 of at most 60:
+Convergence test P-value:0e+00
+Optimizing with step length 1.
+The log-likelihood improved by 0.2797.
+Iteration 7 of at most 60:
+Convergence test P-value:0e+00
+Optimizing with step length 1.
+The log-likelihood improved by 0.3504.
+Iteration 7 of at most 60:
+Convergence test P-value:0e+00
+Optimizing with step length 1.
+The log-likelihood improved by 0.2693.
+Iteration 7 of at most 60:
+Convergence test P-value:0e+00
+Optimizing with step length 1.
+The log-likelihood improved by 0.5088.
+Iteration 7 of at most 60:
+Convergence test P-value:0e+00
+Optimizing with step length 1.
+The log-likelihood improved by 1.137.
+Iteration 7 of at most 60:
+Convergence test P-value:0e+00
+Optimizing with step length 1.
+The log-likelihood improved by 1.189.
+Iteration 7 of at most 60:
+Convergence test P-value:0e+00
+Convergence test P-value:0e+00
+Optimizing with step length 0.80119319098311.
+Convergence test P-value:1.2e-229
+The log-likelihood improved by 1.047.
+Iteration 7 of at most 60:
+Optimizing with step length 1.
+The log-likelihood improved by 0.1338.
+Iteration 8 of at most 60:
+Convergence test P-value:4.1e-292
+Optimizing with step length 1.
+The log-likelihood improved by 0.1734.
+Iteration 8 of at most 60:
+Optimizing with step length 0.931965697079174.
+The log-likelihood improved by 1.326.
+Iteration 7 of at most 60:
+Convergence test P-value:8e-248
+Optimizing with step length 1.
+The log-likelihood improved by 0.1489.
+Iteration 8 of at most 60:
+Convergence test P-value:0e+00
+Optimizing with step length 1.
+The log-likelihood improved by 0.2827.
+Iteration 8 of at most 60:
+Convergence test P-value:0e+00
+Optimizing with step length 1.
+The log-likelihood improved by 0.5699.
+Iteration 8 of at most 60:
+Convergence test P-value:0e+00
+Optimizing with step length 1.
+The log-likelihood improved by 0.6078.
+Iteration 8 of at most 60:
+Convergence test P-value:3.4e-120
+Optimizing with step length 1.
+The log-likelihood improved by 0.06518.
+Iteration 9 of at most 60:
+Convergence test P-value:0e+00
+Optimizing with step length 0.87646012534288.
+Convergence test P-value:3.4e-147
+Convergence test P-value:2.7e-151
+The log-likelihood improved by 1.086.
+Optimizing with step length 1.
+Iteration 8 of at most 60:
+Optimizing with step length 1.
+The log-likelihood improved by 0.08195.
+Iteration 9 of at most 60:
+The log-likelihood improved by 0.08539.
+Iteration 9 of at most 60:
+Convergence test P-value:0e+00
+Convergence test P-value:7.2e-253
+Optimizing with step length 1.
+The log-likelihood improved by 0.1518.
+Iteration 9 of at most 60:
+Optimizing with step length 0.977983054899461.
+The log-likelihood improved by 1.157.
+Iteration 8 of at most 60:
+Convergence test P-value:0e+00
+Optimizing with step length 1.
+The log-likelihood improved by 0.2622.
+Iteration 9 of at most 60:
+Convergence test P-value:0e+00
+Optimizing with step length 1.
+The log-likelihood improved by 0.3109.
+Iteration 9 of at most 60:
+Convergence test P-value:1.1e-38
+Optimizing with step length 1.
+The log-likelihood improved by 0.02182.
+Iteration 10 of at most 60:
+Convergence test P-value:1.1e-56
+Optimizing with step length 1.
+The log-likelihood improved by 0.03137.
+Iteration 10 of at most 60:
+Convergence test P-value:2.2e-55
+Optimizing with step length 1.
+The log-likelihood improved by 0.03007.
+Iteration 10 of at most 60:
+Convergence test P-value:0e+00
+Optimizing with step length 1.
+The log-likelihood improved by 1.323.
+Iteration 9 of at most 60:
+Convergence test P-value:2.6e-143
+Optimizing with step length 1.
+The log-likelihood improved by 0.0806.
+Iteration 10 of at most 60:
+Convergence test P-value:0e+00
+Optimizing with step length 1.
+The log-likelihood improved by 0.7483.
+Iteration 9 of at most 60:
+Convergence test P-value:3.9e-186
+Optimizing with step length 1.
+The log-likelihood improved by 0.1065.
+Iteration 10 of at most 60:
+Convergence test P-value:9.8e-216
+Optimizing with step length 1.
+The log-likelihood improved by 0.1238.
+Iteration 10 of at most 60:
+Convergence test P-value:9.8e-17
+Optimizing with step length 1.
+The log-likelihood improved by 0.01041.
+Iteration 11 of at most 60:
+Convergence test P-value:2.6e-23
+Optimizing with step length 1.
+The log-likelihood improved by 0.01384.
+Iteration 11 of at most 60:
+Convergence test P-value:1e-41
+Optimizing with step length 1.
+The log-likelihood improved by 0.02363.
+Iteration 11 of at most 60:
+Convergence test P-value:0e+00
+Convergence test P-value:5.4e-83
+Optimizing with step length 1.
+Optimizing with step length 1.
+The log-likelihood improved by 0.8494.
+Iteration 10 of at most 60:
+The log-likelihood improved by 0.04592.
+Iteration 11 of at most 60:
+Convergence test P-value:0e+00
+Optimizing with step length 1.
+The log-likelihood improved by 0.3528.
+Iteration 10 of at most 60:
+Convergence test P-value:3.8e-105
+Optimizing with step length 1.
+The log-likelihood improved by 0.05746.
+Iteration 11 of at most 60:
+Convergence test P-value:2.8e-143
+Optimizing with step length 1.
+The log-likelihood improved by 0.0796.
+Iteration 11 of at most 60:
+Convergence test P-value:7.3e-15
+Optimizing with step length 1.
+The log-likelihood improved by 0.009531.
+Iteration 12 of at most 60:
+Convergence test P-value:6.1e-12
+Optimizing with step length 1.
+The log-likelihood improved by 0.008348.
+Iteration 12 of at most 60:
+Convergence test P-value:1.6e-10
+Optimizing with step length 1.
+The log-likelihood improved by 0.007089.
+Iteration 12 of at most 60:
+Convergence test P-value:0e+00
+Optimizing with step length 1.
+Convergence test P-value:4.3e-40
+The log-likelihood improved by 0.4076.
+Iteration 11 of at most 60:
+Convergence test P-value:1.4e-274
+Optimizing with step length 1.
+Optimizing with step length 1.
+The log-likelihood improved by 0.02291.
+Iteration 12 of at most 60:
+The log-likelihood improved by 0.1738.
+Iteration 11 of at most 60:
+Convergence test P-value:1.3e-36
+Optimizing with step length 1.
+The log-likelihood improved by 0.02098.
+Iteration 12 of at most 60:
+Convergence test P-value:2.5e-51
+Convergence test P-value:2.4e-02
+Optimizing with step length 1.
+Optimizing with step length 1.
+The log-likelihood improved by 0.02858.
+Iteration 12 of at most 60:
+The log-likelihood improved by 0.00262.
+Iteration 13 of at most 60:
+Convergence test P-value:3.1e-15
+Optimizing with step length 1.
+Convergence test P-value:7.2e-02
+The log-likelihood improved by 0.009585.
+Iteration 13 of at most 60:
+Optimizing with step length 1.
+Convergence test P-value:7.4e-296
+The log-likelihood improved by 0.001866.
+Iteration 13 of at most 60:
+Optimizing with step length 1.
+The log-likelihood improved by 0.1865.
+Iteration 12 of at most 60:
+Convergence test P-value:6.9e-06
+Optimizing with step length 1.
+The log-likelihood improved by 0.004773.
+Iteration 13 of at most 60:
+Convergence test P-value:5.4e-157
+Optimizing with step length 1.
+The log-likelihood improved by 0.09302.
+Iteration 12 of at most 60:
+Convergence test P-value:7e-15
+Optimizing with step length 1.
+The log-likelihood improved by 0.009353.
+Iteration 13 of at most 60:
+Convergence test P-value:9.2e-26
+Optimizing with step length 1.
+The log-likelihood improved by 0.0152.
+Iteration 13 of at most 60:
+Convergence test P-value:1.7e-03
+Optimizing with step length 1.
+The log-likelihood improved by 0.003061.
+Iteration 14 of at most 60:
+Convergence test P-value:8.4e-149
+Convergence test P-value:8.1e-03
+Optimizing with step length 1.
+Optimizing with step length 1.
+The log-likelihood improved by 0.08447.
+Iteration 13 of at most 60:
+The log-likelihood improved by 0.002551.
+Iteration 14 of at most 60:
+Convergence test P-value:1.6e-09
+Convergence test P-value:1.2e-07
+Optimizing with step length 1.
+Optimizing with step length 1.
+The log-likelihood improved by 0.00652.
+Iteration 14 of at most 60:
+The log-likelihood improved by 0.006078.
+Iteration 14 of at most 60:
+Convergence test P-value:2.8e-09
+Optimizing with step length 1.
+The log-likelihood improved by 0.00638.
+Iteration 14 of at most 60:
+Convergence test P-value:1.2e-78
+Optimizing with step length 1.
+The log-likelihood improved by 0.04363.
+Iteration 13 of at most 60:
+Convergence test P-value:7.1e-02
+Optimizing with step length 1.
+The log-likelihood improved by 0.001875.
+Iteration 15 of at most 60:
+Convergence test P-value:5.2e-18
+Optimizing with step length 1.
+The log-likelihood improved by 0.01106.
+Iteration 14 of at most 60:
+Convergence test P-value:5.9e-03
+Optimizing with step length 1.
+The log-likelihood improved by 0.002655.
+Iteration 15 of at most 60:
+Convergence test P-value:5.1e-06
+Optimizing with step length 1.
+The log-likelihood improved by 0.004555.
+Iteration 15 of at most 60:
+Convergence test P-value:8.3e-66
+Optimizing with step length 1.
+The log-likelihood improved by 0.03625.
+Iteration 14 of at most 60:
+Convergence test P-value:2.1e-01
+Optimizing with step length 1.
+The log-likelihood improved by 0.001719.
+Iteration 15 of at most 60:
+Convergence test P-value:1.3e-06
+Optimizing with step length 1.
+The log-likelihood improved by 0.004904.
+Iteration 15 of at most 60:
+Convergence test P-value:2.3e-44
+Optimizing with step length 1.
+The log-likelihood improved by 0.02562.
+Iteration 14 of at most 60:
+Convergence test P-value:5.2e-01
+Convergence detected. Stopping.
+Optimizing with step length 1.
+The log-likelihood improved by 0.001099.
+Starting Monte Carlo maximum likelihood estimation (MCMLE):
+Iteration 1 of at most 100:
+Convergence test P-value:1e-07
+Optimizing with step length 1.
+Convergence test P-value:3e-03
+The log-likelihood improved by 0.005467.
+Iteration 15 of at most 60:
+Optimizing with step length 1.
+The log-likelihood improved by 0.002835.
+Iteration 16 of at most 60:
+Convergence test P-value:6.3e-30
+Optimizing with step length 1.
+The log-likelihood improved by 0.01728.
+Iteration 15 of at most 60:
+Convergence test P-value:2.2e-03
+Optimizing with step length 1.
+The log-likelihood improved by 0.002937.
+Iteration 16 of at most 60:
+Convergence test P-value:5.2e-02
+Optimizing with step length 1.
+The log-likelihood improved by 0.001967.
+Iteration 16 of at most 60:
+Convergence test P-value:5.3e-02
+Optimizing with step length 1.
+The log-likelihood improved by 0.001954.
+Iteration 16 of at most 60:
+Convergence test P-value:4.2e-14
+Optimizing with step length 1.
+The log-likelihood improved by 0.008971.
+Iteration 15 of at most 60:
+Convergence test P-value:2.8e-02
+Optimizing with step length 1.
+The log-likelihood improved by 0.002159.
+Iteration 16 of at most 60:
+Convergence test P-value:2.5e-02
+Convergence test P-value:1.2e-11
+Optimizing with step length 1.
+Optimizing with step length 1.
+The log-likelihood improved by 0.002203.
+Iteration 17 of at most 60:
+The log-likelihood improved by 0.007608.
+Iteration 16 of at most 60:
+Convergence test P-value:1.3e-04
+Optimizing with step length 1.
+The log-likelihood improved by 0.003745.
+Iteration 17 of at most 60:
+Convergence test P-value:1.9e-01
+Optimizing with step length 1.
+The log-likelihood improved by 0.001751.
+Iteration 17 of at most 60:
+Convergence test P-value:3.6e-04
+Optimizing with step length 1.
+The log-likelihood improved by 0.003454.
+Iteration 17 of at most 60:
+Convergence test P-value:8.4e-05
+Optimizing with step length 1.
+The log-likelihood improved by 0.004265.
+Iteration 16 of at most 60:
+Convergence test P-value:1.1e-01
+Convergence test P-value:4.9e-12
+Optimizing with step length 1.
+Optimizing with step length 1.
+The log-likelihood improved by 0.007874.
+Iteration 17 of at most 60:
+The log-likelihood improved by 0.001683.
+Iteration 18 of at most 60:
+Convergence test P-value:1.6e-02
+Optimizing with step length 1.
+The log-likelihood improved by 0.002362.
+Iteration 17 of at most 60:
+Convergence test P-value:2.6e-01
+Optimizing with step length 1.
+The log-likelihood improved by 0.001355.
+Iteration 18 of at most 60:
+Convergence test P-value:8.4e-02
+Optimizing with step length 1.
+The log-likelihood improved by 0.001815.
+Iteration 18 of at most 60:
+Convergence test P-value:5.1e-01
+Convergence detected. Stopping.
+Optimizing with step length 1.
+The log-likelihood improved by 0.001246.
+Starting Monte Carlo maximum likelihood estimation (MCMLE):
+Iteration 1 of at most 100:
+Convergence test P-value:4.1e-03
+Optimizing with step length 1.
+The log-likelihood improved by 0.002766.
+Iteration 17 of at most 60:
+Convergence test P-value:1.4e-02
+Optimizing with step length 1.
+The log-likelihood improved by 0.002396.
+Iteration 19 of at most 60:
+Convergence test P-value:6e-02
+Optimizing with step length 1.
+The log-likelihood improved by 0.001915.
+Iteration 18 of at most 60:
+Convergence test P-value:5.4e-02
+Optimizing with step length 1.
+The log-likelihood improved by 0.001963.
+Iteration 19 of at most 60:
+Convergence test P-value:5.3e-03
+Optimizing with step length 1.
+The log-likelihood improved by 0.002709.
+Iteration 18 of at most 60:
+Convergence test P-value:4.9e-01
+Optimizing with step length 1.
+The log-likelihood improved by 0.001047.
+Iteration 19 of at most 60:
+Convergence test P-value:8e-01
+Convergence detected. Stopping.
+Optimizing with step length 1.
+The log-likelihood improved by 0.0006979.
+Starting Monte Carlo maximum likelihood estimation (MCMLE):
+Iteration 1 of at most 100:
+Convergence test P-value:1.4e-03
+Optimizing with step length 1.
+The log-likelihood improved by 0.003738.
+Iteration 19 of at most 60:
+Convergence test P-value:5.3e-01
+Convergence detected. Stopping.
+Optimizing with step length 1.
+The log-likelihood improved by 0.001008.
+Starting Monte Carlo maximum likelihood estimation (MCMLE):
+Iteration 1 of at most 100:
+Convergence test P-value:5.5e-01
+Convergence detected. Stopping.
+Optimizing with step length 1.
+The log-likelihood improved by 0.0009803.
+Starting Monte Carlo maximum likelihood estimation (MCMLE):
+Iteration 1 of at most 100:
+Convergence test P-value:2.7e-02
+Optimizing with step length 1.
+The log-likelihood improved by 0.002186.
+Iteration 19 of at most 60:
+Convergence test P-value:1.9e-01
+Optimizing with step length 1.
+The log-likelihood improved by 0.001479.
+Iteration 20 of at most 60:
+Convergence test P-value:1.4e-01
+Optimizing with step length 1.
+The log-likelihood improved by 0.001608.
+Iteration 20 of at most 60:
+Convergence test P-value:3e-01
+Optimizing with step length 1.
+The log-likelihood improved by 0.001277.
+Iteration 20 of at most 60:
+Convergence test P-value:4.8e-01
+Optimizing with step length 1.
+The log-likelihood improved by 0.001066.
+Iteration 21 of at most 60:
+Convergence test P-value:1.8e-02
+Optimizing with step length 1.
+The log-likelihood improved by 0.002284.
+Iteration 21 of at most 60:
+Convergence test P-value:7.2e-01
+Convergence detected. Stopping.
+Optimizing with step length 1.
+The log-likelihood improved by 0.0007885.
+Starting Monte Carlo maximum likelihood estimation (MCMLE):
+Iteration 1 of at most 100:
+Convergence test P-value:3.2e-01
+Optimizing with step length 1.
+The log-likelihood improved by 0.001265.
+Iteration 22 of at most 60:
+Convergence test P-value:3.7e-01
+Optimizing with step length 1.
+The log-likelihood improved by 0.001195.
+Iteration 22 of at most 60:
+Convergence test P-value:8.7e-09
+Optimizing with step length 1.
+The log-likelihood improved by 0.006001.
+Iteration 23 of at most 60:
+Convergence test P-value:6.5e-01
+Convergence detected. Stopping.
+Optimizing with step length 1.
+The log-likelihood improved by 0.0008703.
+Starting Monte Carlo maximum likelihood estimation (MCMLE):
+Iteration 1 of at most 100:
+Convergence test P-value:1.9e-03
+Optimizing with step length 1.
+The log-likelihood improved by 0.002988.
+Iteration 24 of at most 60:
+Convergence test P-value:2.8e-01
+Optimizing with step length 1.
+The log-likelihood improved by 0.001328.
+Iteration 25 of at most 60:
+Convergence test P-value:1.5e-01
+Optimizing with step length 1.
+The log-likelihood improved by 0.001616.
+Iteration 26 of at most 60:
+Convergence test P-value:3.3e-01
+Optimizing with step length 1.
+The log-likelihood improved by 0.001247.
+Iteration 27 of at most 60:
+Convergence test P-value:2.3e-01
+Optimizing with step length 1.
+The log-likelihood improved by 0.001406.
+Iteration 28 of at most 60:
+Convergence test P-value:6.1e-01
+Convergence detected. Stopping.
+Optimizing with step length 1.
+The log-likelihood improved by 0.0009173.
+Starting Monte Carlo maximum likelihood estimation (MCMLE):
+Iteration 1 of at most 100:
+Optimizing with step length 0.69058237290646.
+The log-likelihood did not improve.
+Iteration 2 of at most 100:
+Optimizing with step length 0.622035216963395.
+The log-likelihood did not improve.
+Iteration 2 of at most 100:
+Optimizing with step length 0.737936669172499.
+The log-likelihood did not improve.
+Iteration 2 of at most 100:
+Optimizing with step length 0.928901588332459.
+The log-likelihood improved by 7.547.
+Iteration 2 of at most 100:
+Optimizing with step length 0.617943585700211.
+The log-likelihood did not improve.
+Iteration 2 of at most 100:
+Optimizing with step length 0.673203748989597.
+The log-likelihood did not improve.
+Iteration 2 of at most 100:
+Optimizing with step length 0.63697778385795.
+The log-likelihood improved by 7.048.
+Iteration 2 of at most 100:
+Optimizing with step length 0.64523190501921.
+The log-likelihood did not improve.
+Iteration 2 of at most 100:
+Optimizing with step length 1.
+The log-likelihood improved by 0.919.
+Step length converged once. Increasing MCMC sample size.
+Iteration 3 of at most 100:
+Optimizing with step length 1.
+The log-likelihood improved by 4.558.
+Step length converged once. Increasing MCMC sample size.
+Iteration 3 of at most 100:
+Optimizing with step length 0.42983242334878.
+The log-likelihood improved by 3.227.
+Iteration 3 of at most 100:
+Optimizing with step length 0.705906234852605.
+The log-likelihood improved by 4.397.
+Iteration 3 of at most 100:
+Optimizing with step length 1.
+The log-likelihood improved by 4.073.
+Step length converged once. Increasing MCMC sample size.
+Iteration 3 of at most 100:
+Optimizing with step length 1.
+The log-likelihood improved by 1.773.
+Step length converged once. Increasing MCMC sample size.
+Iteration 3 of at most 100:
+Optimizing with step length 1.
+The log-likelihood improved by 2.183.
+Step length converged once. Increasing MCMC sample size.
+Iteration 3 of at most 100:
+Optimizing with step length 1.
+The log-likelihood improved by 0.07397.
+Step length converged once. Increasing MCMC sample size.
+Iteration 3 of at most 100:
+Optimizing with step length 1.
+The log-likelihood improved by 0.9521.
+Step length converged once. Increasing MCMC sample size.
+Iteration 4 of at most 100:
+Optimizing with step length 0.612877153873149.
+The log-likelihood improved by 3.523.
+Iteration 4 of at most 100:
+Optimizing with step length 1.
+The log-likelihood improved by 2.408.
+Step length converged once. Increasing MCMC sample size.
+Iteration 5 of at most 100:
+Optimizing with step length 1.
+The log-likelihood improved by 0.02738.
+Step length converged twice. Stopping.
+Finished MCMLE.
+Note: Null model likelihood calculation is not implemented for valued
+ERGMs at this time.  This means that all likelihood-based inference
+(LRT, Analysis of Deviance, AIC, BIC, etc.) is only valid between
+models with the same reference distribution and constraints.
+Evaluating log-likelihood at the estimate. Using 20 bridges: 1 2 Optimizing with step length 1.
+The log-likelihood improved by 0.07518.
+Step length converged twice. Stopping.
+Finished MCMLE.
+Note: Null model likelihood calculation is not implemented for valued
+ERGMs at this time.  This means that all likelihood-based inference
+(LRT, Analysis of Deviance, AIC, BIC, etc.) is only valid between
+models with the same reference distribution and constraints.
+Evaluating log-likelihood at the estimate. Using 20 bridges: 1 3 2 4 3 5 4 6 5 7 8 6 Optimizing with step length 1.
+The log-likelihood improved by 0.03825.
+Step length converged twice. Stopping.
+Finished MCMLE.
+Note: Null model likelihood calculation is not implemented for valued
+ERGMs at this time.  This means that all likelihood-based inference
+(LRT, Analysis of Deviance, AIC, BIC, etc.) is only valid between
+models with the same reference distribution and constraints.
+Evaluating log-likelihood at the estimate. Using 20 bridges: 1 9 7 2 8 10 Optimizing with step length 1.
+The log-likelihood improved by 0.07136.
+Step length converged twice. Stopping.
+Finished MCMLE.
+Note: Null model likelihood calculation is not implemented for valued
+ERGMs at this time.  This means that all likelihood-based inference
+(LRT, Analysis of Deviance, AIC, BIC, etc.) is only valid between
+models with the same reference distribution and constraints.
+Evaluating log-likelihood at the estimate. Using 20 bridges: 1 3 9 11 2 4 10 12 Optimizing with step length 1.
+The log-likelihood improved by 0.03188.
+Step length converged twice. Stopping.
+Finished MCMLE.
+Note: Null model likelihood calculation is not implemented for valued
+ERGMs at this time.  This means that all likelihood-based inference
+(LRT, Analysis of Deviance, AIC, BIC, etc.) is only valid between
+models with the same reference distribution and constraints.
+Evaluating log-likelihood at the estimate. Using 20 bridges: 1 3 5 11 2 13 4 6 12 3 Optimizing with step length 1.
+The log-likelihood improved by 0.01103.
+Step length converged twice. Stopping.
+Finished MCMLE.
+Note: Null model likelihood calculation is not implemented for valued
+ERGMs at this time.  This means that all likelihood-based inference
+(LRT, Analysis of Deviance, AIC, BIC, etc.) is only valid between
+models with the same reference distribution and constraints.
+Evaluating log-likelihood at the estimate. Using 20 bridges: 1 5 14 7 13 2 4 6 8 15 5 14 7 3 9 6 8 4 16 10 15 Optimizing with step length 1.
+The log-likelihood improved by 0.03983.
+Step length converged twice. Stopping.
+Finished MCMLE.
+Note: Null model likelihood calculation is not implemented for valued
+ERGMs at this time.  This means that all likelihood-based inference
+(LRT, Analysis of Deviance, AIC, BIC, etc.) is only valid between
+models with the same reference distribution and constraints.
+Evaluating log-likelihood at the estimate. Using 20 bridges: 1 7 9 5 11 8 10 2 17 16 6 12 11 9 3 7 12 13 10 17 18 4 8 13 11 9 5 14 6 12 10 14 18 19 15 7 11 13 15 8 12 9 19 14 16 20 16 10 13 11 15 12 14 17 17 20 13 16 14 .
+This model was fit using MCMC.  To examine model diagnostics and check
+for degeneracy, use the mcmc.diagnostics() function.
+Starting contrastive divergence estimation via CD-MCMLE:
+Iteration 1 of at most 60:
+Convergence test P-value:0e+00
+15 Optimizing with step length 0.772243516931421.
+The log-likelihood improved by 1.163.
+Iteration 2 of at most 60:
+Convergence test P-value:0e+00
+Optimizing with step length 0.806116444606083.
+The log-likelihood improved by 1.185.
+Iteration 3 of at most 60:
+Convergence test P-value:0e+00
+Optimizing with step length 0.888707600580793.
+The log-likelihood improved by 1.316.
+Iteration 4 of at most 60:
+Convergence test P-value:0e+00
+Optimizing with step length 1.
+The log-likelihood improved by 1.417.
+Iteration 5 of at most 60:
+Convergence test P-value:0e+00
+Optimizing with step length 1.
+The log-likelihood improved by 0.6816.
+Iteration 6 of at most 60:
+Convergence test P-value:0e+00
+Optimizing with step length 1.
+The log-likelihood improved by 0.3534.
+Iteration 7 of at most 60:
+Convergence test P-value:9.5e-285
+Optimizing with step length 1.
+The log-likelihood improved by 0.1759.
+Iteration 8 of at most 60:
+Convergence test P-value:1e-156
+Optimizing with step length 1.
+The log-likelihood improved by 0.08832.
+Iteration 9 of at most 60:
+Convergence test P-value:1.4e-61
+Optimizing with step length 1.
+The log-likelihood improved by 0.03383.
+Iteration 10 of at most 60:
+15 Convergence test P-value:2.2e-41
+Optimizing with step length 1.
+The log-likelihood improved by 0.02319.
+Iteration 11 of at most 60:
+Convergence test P-value:2.6e-14
+Optimizing with step length 1.
+The log-likelihood improved by 0.009126.
+Iteration 12 of at most 60:
+18 Convergence test P-value:2.2e-03
+Optimizing with step length 1.
+The log-likelihood improved by 0.002939.
+Iteration 13 of at most 60:
+Convergence test P-value:1.4e-03
+Optimizing with step length 1.
+The log-likelihood improved by 0.003077.
+Iteration 14 of at most 60:
+Convergence test P-value:1.4e-03
+Optimizing with step length 1.
+The log-likelihood improved by 0.003057.
+Iteration 15 of at most 60:
+18 Convergence test P-value:3.3e-02
+Optimizing with step length 1.
+The log-likelihood improved by 0.002114.
+Iteration 16 of at most 60:
+Convergence test P-value:9.9e-02
+Optimizing with step length 1.
+The log-likelihood improved by 0.001746.
+Iteration 17 of at most 60:
+Convergence test P-value:8.8e-02
+Optimizing with step length 1.
+The log-likelihood improved by 0.001778.
+Iteration 18 of at most 60:
+Convergence test P-value:2.7e-01
+Optimizing with step length 1.
+The log-likelihood improved by 0.001346.
+Iteration 19 of at most 60:
+Convergence test P-value:3.2e-01
+Optimizing with step length 1.
+The log-likelihood improved by 0.00127.
+Iteration 20 of at most 60:
+Convergence test P-value:2.1e-01
+Optimizing with step length 1.
+The log-likelihood improved by 0.001446.
+Iteration 21 of at most 60:
+Convergence test P-value:5.7e-01
+Convergence detected. Stopping.
+Optimizing with step length 1.
+The log-likelihood improved by 0.0009582.
+Starting Monte Carlo maximum likelihood estimation (MCMLE):
+Iteration 1 of at most 100:
+16 16 17 .
+This model was fit using MCMC.  To examine model diagnostics and check
+for degeneracy, use the mcmc.diagnostics() function.
+Starting contrastive divergence estimation via CD-MCMLE:
+Iteration 1 of at most 60:
+Convergence test P-value:0e+00
+Optimizing with step length 0.714570900039465.
+The log-likelihood improved by 1.005.
+Iteration 2 of at most 60:
+Convergence test P-value:0e+00
+Optimizing with step length 0.808843779498526.
+The log-likelihood improved by 1.254.
+Iteration 3 of at most 60:
+Convergence test P-value:0e+00
+Optimizing with step length 0.828171761937746.
+The log-likelihood improved by 1.182.
+Iteration 4 of at most 60:
+Convergence test P-value:0e+00
+Optimizing with step length 0.88019524404715.
+The log-likelihood improved by 1.208.
+Iteration 5 of at most 60:
+Convergence test P-value:0e+00
+Optimizing with step length 1.
+The log-likelihood improved by 1.245.
+Iteration 6 of at most 60:
+Convergence test P-value:0e+00
+Optimizing with step length 1.
+The log-likelihood improved by 0.7137.
+Iteration 7 of at most 60:
+17 Convergence test P-value:0e+00
+Optimizing with step length 1.
+The log-likelihood improved by 0.3122.
+Iteration 8 of at most 60:
+Convergence test P-value:2.6e-281
+Optimizing with step length 1.
+The log-likelihood improved by 0.1721.
+Iteration 9 of at most 60:
+Convergence test P-value:3.8e-115
+Optimizing with step length 1.
+The log-likelihood improved by 0.06455.
+Iteration 10 of at most 60:
+Convergence test P-value:6e-68
+Optimizing with step length 1.
+The log-likelihood improved by 0.03783.
+Iteration 11 of at most 60:
+Convergence test P-value:1.1e-18
+Optimizing with step length 1.
+The log-likelihood improved by 0.01145.
+Iteration 12 of at most 60:
+Convergence test P-value:5.7e-08
+19 Optimizing with step length 1.
+The log-likelihood improved by 0.005697.
+Iteration 13 of at most 60:
+Convergence test P-value:3.8e-10
+Optimizing with step length 1.
+The log-likelihood improved by 0.006897.
+Iteration 14 of at most 60:
+Convergence test P-value:6.4e-06
+Optimizing with step length 1.
+The log-likelihood improved by 0.004529.
+Iteration 15 of at most 60:
+Convergence test P-value:1.7e-02
+Optimizing with step length 1.
+The log-likelihood improved by 0.002341.
+Iteration 16 of at most 60:
+19 Convergence test P-value:1.7e-02
+Optimizing with step length 1.
+The log-likelihood improved by 0.002336.
+Iteration 17 of at most 60:
+Convergence test P-value:8.1e-01
+Convergence detected. Stopping.
+Optimizing with step length 1.
+The log-likelihood improved by 0.000693.
+Starting Monte Carlo maximum likelihood estimation (MCMLE):
+Iteration 1 of at most 100:
+17 18 18 20 19 18 20 19 20 19 .
+This model was fit using MCMC.  To examine model diagnostics and check
+for degeneracy, use the mcmc.diagnostics() function.
+Starting contrastive divergence estimation via CD-MCMLE:
+Iteration 1 of at most 60:
+Convergence test P-value:0e+00
+Optimizing with step length 0.775169112930648.
+The log-likelihood improved by 1.196.
+Iteration 2 of at most 60:
+Convergence test P-value:0e+00
+Optimizing with step length 0.760560948700558.
+The log-likelihood improved by 1.062.
+Iteration 3 of at most 60:
+Convergence test P-value:0e+00
+Optimizing with step length 0.85792251425063.
+The log-likelihood improved by 1.247.
+Iteration 4 of at most 60:
+20 Convergence test P-value:0e+00
+Optimizing with step length 0.870027236130592.
+The log-likelihood improved by 1.15.
+Iteration 5 of at most 60:
+Convergence test P-value:0e+00
+Optimizing with step length 1.
+The log-likelihood improved by 1.316.
+Iteration 6 of at most 60:
+Convergence test P-value:0e+00
+Optimizing with step length 1.
+The log-likelihood improved by 0.689.
+Iteration 7 of at most 60:
+Convergence test P-value:0e+00
+Optimizing with step length 1.
+The log-likelihood improved by 0.3558.
+Iteration 8 of at most 60:
+Convergence test P-value:0e+00
+Optimizing with step length 1.
+The log-likelihood improved by 0.2039.
+Iteration 9 of at most 60:
+Convergence test P-value:8.2e-135
+Optimizing with step length 1.
+The log-likelihood improved by 0.07474.
+Iteration 10 of at most 60:
+.
+This model was fit using MCMC.  To examine model diagnostics and check
+for degeneracy, use the mcmc.diagnostics() function.
+Convergence test P-value:2e-68
+Optimizing with step length 1.
+The log-likelihood improved by 0.03781.
+Iteration 11 of at most 60:
+Convergence test P-value:3.7e-27
+Optimizing with step length 1.
+The log-likelihood improved by 0.01587.
+Iteration 12 of at most 60:
+Convergence test P-value:4.1e-09
+Optimizing with step length 1.
+The log-likelihood improved by 0.006374.
+Iteration 13 of at most 60:
+Convergence test P-value:2.4e-09
+Optimizing with step length 1.
+The log-likelihood improved by 0.006573.
+Iteration 14 of at most 60:
+Convergence test P-value:8.1e-08
+Optimizing with step length 1.
+The log-likelihood improved by 0.00604.
+Iteration 15 of at most 60:
+Convergence test P-value:2.1e-01
+Optimizing with step length 1.
+The log-likelihood improved by 0.001474.
+Iteration 16 of at most 60:
+Convergence test P-value:1e-02
+Optimizing with step length 1.
+The log-likelihood improved by 0.002462.
+Iteration 17 of at most 60:
+Convergence test P-value:2e-01
+Optimizing with step length 1.
+The log-likelihood improved by 0.001492.
+Iteration 18 of at most 60:
+Convergence test P-value:1.9e-01
+Optimizing with step length 1.
+The log-likelihood improved by 0.001608.
+Iteration 19 of at most 60:
+Convergence test P-value:7.5e-02
+Optimizing with step length 1.
+The log-likelihood improved by 0.00184.
+Iteration 20 of at most 60:
+Convergence test P-value:6.9e-01
+Convergence detected. Stopping.
+Optimizing with step length 1.
+The log-likelihood improved by 0.0008854.
+Starting Monte Carlo maximum likelihood estimation (MCMLE):
+Iteration 1 of at most 100:
+.
+This model was fit using MCMC.  To examine model diagnostics and check
+for degeneracy, use the mcmc.diagnostics() function.
+Starting contrastive divergence estimation via CD-MCMLE:
+Iteration 1 of at most 60:
+Convergence test P-value:0e+00
+Optimizing with step length 0.726461237665825.
+The log-likelihood improved by 1.061.
+Iteration 2 of at most 60:
+Convergence test P-value:0e+00
+20 Optimizing with step length 0.761511480999467.
+The log-likelihood improved by 1.088.
+Iteration 3 of at most 60:
+Convergence test P-value:0e+00
+Optimizing with step length 0.774608887680818.
+The log-likelihood improved by 1.028.
+Iteration 4 of at most 60:
+Convergence test P-value:0e+00
+Optimizing with step length 0.842147088614447.
+The log-likelihood improved by 1.164.
+Iteration 5 of at most 60:
+Convergence test P-value:0e+00
+Optimizing with step length 0.924833152300837.
+The log-likelihood improved by 1.271.
+Iteration 6 of at most 60:
+Convergence test P-value:0e+00
+Optimizing with step length 1.
+The log-likelihood improved by 1.001.
+Iteration 7 of at most 60:
+Convergence test P-value:0e+00
+Optimizing with step length 1.
+The log-likelihood improved by 0.4949.
+Iteration 8 of at most 60:
+Convergence test P-value:0e+00
+Optimizing with step length 1.
+The log-likelihood improved by 0.2381.
+Iteration 9 of at most 60:
+Convergence test P-value:1.4e-183
+Optimizing with step length 1.
+The log-likelihood improved by 0.105.
+Iteration 10 of at most 60:
+Optimizing with step length 1.
+The log-likelihood improved by 0.06576.
+Step length converged twice. Stopping.
+Finished MCMLE.
+Note: Null model likelihood calculation is not implemented for valued
+ERGMs at this time.  This means that all likelihood-based inference
+(LRT, Analysis of Deviance, AIC, BIC, etc.) is only valid between
+models with the same reference distribution and constraints.
+Evaluating log-likelihood at the estimate. Using 20 bridges: 1 Convergence test P-value:1e-116
+Optimizing with step length 1.
+The log-likelihood improved by 0.06527.
+Iteration 11 of at most 60:
+Convergence test P-value:2.9e-44
+Optimizing with step length 1.
+The log-likelihood improved by 0.02542.
+Iteration 12 of at most 60:
+Convergence test P-value:1.2e-20
+Optimizing with step length 1.
+The log-likelihood improved by 0.01276.
+Iteration 13 of at most 60:
+Convergence test P-value:4.8e-13
+Optimizing with step length 1.
+The log-likelihood improved by 0.008451.
+Iteration 14 of at most 60:
+.
+This model was fit using MCMC.  To examine model diagnostics and check
+for degeneracy, use the mcmc.diagnostics() function.
+Starting contrastive divergence estimation via CD-MCMLE:
+Iteration 1 of at most 60:
+Convergence test P-value:5.2e-06
+Optimizing with step length 1.
+The log-likelihood improved by 0.004585.
+Iteration 15 of at most 60:
+Convergence test P-value:0e+00
+Optimizing with step length 0.725904813607064.
+The log-likelihood improved by 1.03.
+Iteration 2 of at most 60:
+Convergence test P-value:2.8e-02
+Optimizing with step length 1.
+The log-likelihood improved by 0.002177.
+Iteration 16 of at most 60:
+Convergence test P-value:0e+00
+Optimizing with step length 0.771437745586747.
+The log-likelihood improved by 1.098.
+Iteration 3 of at most 60:
+Convergence test P-value:5e-02
+Optimizing with step length 1.
+The log-likelihood improved by 0.001995.
+Iteration 17 of at most 60:
+Convergence test P-value:0e+00
+Optimizing with step length 0.780731021654917.
+The log-likelihood improved by 1.053.
+Iteration 4 of at most 60:
+Convergence test P-value:5.3e-01
+Convergence detected. Stopping.
+Optimizing with step length 1.
+The log-likelihood improved by 0.001017.
+Starting Monte Carlo maximum likelihood estimation (MCMLE):
+Iteration 1 of at most 100:
+Convergence test P-value:0e+00
+Optimizing with step length 0.853221060624906.
+The log-likelihood improved by 1.274.
+Iteration 5 of at most 60:
+Convergence test P-value:0e+00
+Optimizing with step length 0.978243686223122.
+The log-likelihood improved by 1.47.
+Iteration 6 of at most 60:
+Convergence test P-value:0e+00
+Optimizing with step length 1.
+The log-likelihood improved by 1.01.
+Iteration 7 of at most 60:
+Convergence test P-value:0e+00
+Optimizing with step length 1.
+The log-likelihood improved by 0.5924.
+Iteration 8 of at most 60:
+Convergence test P-value:0e+00
+Optimizing with step length 1.
+The log-likelihood improved by 0.2826.
+Iteration 9 of at most 60:
+Convergence test P-value:1.2e-205
+Optimizing with step length 1.
+The log-likelihood improved by 0.1191.
+Iteration 10 of at most 60:
+Convergence test P-value:4.5e-86
+Optimizing with step length 1.
+The log-likelihood improved by 0.0475.
+Iteration 11 of at most 60:
+Convergence test P-value:8.2e-51
+Optimizing with step length 1.
+The log-likelihood improved by 0.02837.
+Iteration 12 of at most 60:
+2 Convergence test P-value:7.1e-11
+Optimizing with step length 1.
+The log-likelihood improved by 0.007264.
+Iteration 13 of at most 60:
+Convergence test P-value:2.3e-21
+Optimizing with step length 1.
+The log-likelihood improved by 0.01289.
+Iteration 14 of at most 60:
+Convergence test P-value:1.2e-04
+Optimizing with step length 1.
+The log-likelihood improved by 0.003747.
+Iteration 15 of at most 60:
+Convergence test P-value:9.6e-06
+Optimizing with step length 1.
+The log-likelihood improved by 0.004383.
+Iteration 16 of at most 60:
+Convergence test P-value:3.2e-02
+Optimizing with step length 1.
+The log-likelihood improved by 0.002132.
+Iteration 17 of at most 60:
+Convergence test P-value:9.6e-03
+Optimizing with step length 1.
+The log-likelihood improved by 0.002493.
+Iteration 18 of at most 60:
+Convergence test P-value:1.9e-03
+Optimizing with step length 1.
+The log-likelihood improved by 0.002969.
+Iteration 19 of at most 60:
+Convergence test P-value:2e-04
+Optimizing with step length 1.
+The log-likelihood improved by 0.003588.
+Iteration 20 of at most 60:
+Convergence test P-value:4.6e-01
+Optimizing with step length 1.
+The log-likelihood improved by 0.001086.
+Iteration 21 of at most 60:
+Convergence test P-value:4.4e-02
+Optimizing with step length 1.
+The log-likelihood improved by 0.002021.
+Iteration 22 of at most 60:
+Convergence test P-value:7.5e-01
+Convergence detected. Stopping.
+Optimizing with step length 1.
+The log-likelihood improved by 0.0007548.
+Starting Monte Carlo maximum likelihood estimation (MCMLE):
+Iteration 1 of at most 100:
+3 .
+This model was fit using MCMC.  To examine model diagnostics and check
+for degeneracy, use the mcmc.diagnostics() function.
+Starting contrastive divergence estimation via CD-MCMLE:
+Iteration 1 of at most 60:
+Convergence test P-value:0e+00
+Optimizing with step length 0.781913943074415.
+The log-likelihood improved by 1.186.
+Iteration 2 of at most 60:
+Convergence test P-value:0e+00
+Optimizing with step length 0.803782318187903.
+The log-likelihood improved by 1.096.
+Iteration 3 of at most 60:
+Convergence test P-value:0e+00
+Optimizing with step length 0.985425917208715.
+The log-likelihood improved by 1.629.
+Iteration 4 of at most 60:
+Convergence test P-value:0e+00
+Optimizing with step length 1.
+The log-likelihood improved by 1.03.
+Iteration 5 of at most 60:
+Convergence test P-value:0e+00
+Optimizing with step length 1.
+The log-likelihood improved by 0.5657.
+Iteration 6 of at most 60:
+Convergence test P-value:0e+00
+Optimizing with step length 1.
+The log-likelihood improved by 0.2715.
+Iteration 7 of at most 60:
+Convergence test P-value:1.1e-207
+Optimizing with step length 1.
+The log-likelihood improved by 0.1218.
+Iteration 8 of at most 60:
+Convergence test P-value:2.3e-108
+Optimizing with step length 1.
+The log-likelihood improved by 0.05995.
+Iteration 9 of at most 60:
+Convergence test P-value:3.6e-47
+Optimizing with step length 1.
+The log-likelihood improved by 0.02614.
+Iteration 10 of at most 60:
+4 Convergence test P-value:2.3e-17
+Optimizing with step length 1.
+The log-likelihood improved by 0.01075.
+Iteration 11 of at most 60:
+Convergence test P-value:7.4e-11
+Optimizing with step length 1.
+The log-likelihood improved by 0.007227.
+Iteration 12 of at most 60:
+Convergence test P-value:2.8e-03
+Optimizing with step length 1.
+The log-likelihood improved by 0.002852.
+Iteration 13 of at most 60:
+Convergence test P-value:7.4e-03
+Optimizing with step length 1.
+The log-likelihood improved by 0.002588.
+Iteration 14 of at most 60:
+Convergence test P-value:1.2e-01
+Optimizing with step length 1.
+The log-likelihood improved by 0.001663.
+Iteration 15 of at most 60:
+Convergence test P-value:2.7e-03
+Optimizing with step length 1.
+The log-likelihood improved by 0.002877.
+Iteration 16 of at most 60:
+Convergence test P-value:4.2e-01
+Optimizing with step length 1.
+The log-likelihood improved by 0.00113.
+Iteration 17 of at most 60:
+Convergence test P-value:4.2e-02
+Optimizing with step length 1.
+The log-likelihood improved by 0.002021.
+Iteration 18 of at most 60:
+Convergence test P-value:3.1e-01
+Optimizing with step length 1.
+The log-likelihood improved by 0.001281.
+Iteration 19 of at most 60:
+Convergence test P-value:1.4e-01
+Optimizing with step length 1.
+The log-likelihood improved by 0.001607.
+Iteration 20 of at most 60:
+Convergence test P-value:1.2e-03
+Optimizing with step length 1.
+The log-likelihood improved by 0.003106.
+Iteration 21 of at most 60:
+Convergence test P-value:6.6e-01
+Convergence detected. Stopping.
+Optimizing with step length 1.
+The log-likelihood improved by 0.0008688.
+Starting Monte Carlo maximum likelihood estimation (MCMLE):
+Iteration 1 of at most 100:
+5 6 Optimizing with step length 0.619588733406248.
+The log-likelihood did not improve.
+Iteration 2 of at most 100:
+7 8 Optimizing with step length 0.675188646455539.
+The log-likelihood improved by 13.34.
+Iteration 2 of at most 100:
+9 10 11 12 13 14 15 16 17 Optimizing with step length 0.593589667520235.
+The log-likelihood improved by 19.08.
+Iteration 2 of at most 100:
+Optimizing with step length 0.692449751069902.
+The log-likelihood improved by 11.78.
+Iteration 2 of at most 100:
+18 Optimizing with step length 0.557149670415042.
+The log-likelihood did not improve.
+Iteration 2 of at most 100:
+19 Optimizing with step length 1.
+The log-likelihood improved by 4.122.
+Step length converged once. Increasing MCMC sample size.
+Iteration 3 of at most 100:
+Optimizing with step length 0.651070230298416.
+The log-likelihood did not improve.
+Iteration 2 of at most 100:
+20 Optimizing with step length 1.
+The log-likelihood improved by 1.274.
+Step length converged once. Increasing MCMC sample size.
+Iteration 3 of at most 100:
+.
+This model was fit using MCMC.  To examine model diagnostics and check
+for degeneracy, use the mcmc.diagnostics() function.
+Starting contrastive divergence estimation via CD-MCMLE:
+Iteration 1 of at most 60:
+Convergence test P-value:0e+00
+Optimizing with step length 0.731974633978078.
+The log-likelihood improved by 1.049.
+Iteration 2 of at most 60:
+Convergence test P-value:0e+00
+Optimizing with step length 0.752578470222205.
+The log-likelihood improved by 1.004.
+Iteration 3 of at most 60:
+Convergence test P-value:0e+00
+Optimizing with step length 0.819242581388929.
+The log-likelihood improved by 1.158.
+Iteration 4 of at most 60:
+Convergence test P-value:0e+00
+Optimizing with step length 0.898093145811669.
+The log-likelihood improved by 1.28.
+Iteration 5 of at most 60:
+Convergence test P-value:0e+00
+Optimizing with step length 0.970000247899328.
+The log-likelihood improved by 1.303.
+Iteration 6 of at most 60:
+Convergence test P-value:0e+00
+Optimizing with step length 1.
+The log-likelihood improved by 0.856.
+Iteration 7 of at most 60:
+Convergence test P-value:0e+00
+Optimizing with step length 1.
+The log-likelihood improved by 0.4086.
+Iteration 8 of at most 60:
+Convergence test P-value:0e+00
+Optimizing with step length 1.
+The log-likelihood improved by 0.1966.
+Iteration 9 of at most 60:
+Convergence test P-value:3.1e-139
+Optimizing with step length 1.
+The log-likelihood improved by 0.07816.
+Iteration 10 of at most 60:
+Convergence test P-value:1.1e-73
+Optimizing with step length 1.
+The log-likelihood improved by 0.04082.
+Iteration 11 of at most 60:
+Convergence test P-value:7.5e-21
+Optimizing with step length 1.
+The log-likelihood improved by 0.01258.
+Iteration 12 of at most 60:
+Convergence test P-value:1.7e-10
+Optimizing with step length 1.
+The log-likelihood improved by 0.007666.
+Iteration 13 of at most 60:
+Convergence test P-value:3.5e-14
+Optimizing with step length 1.
+The log-likelihood improved by 0.009055.
+Iteration 14 of at most 60:
+Convergence test P-value:1.5e-01
+Optimizing with step length 1.
+The log-likelihood improved by 0.002662.
+Iteration 15 of at most 60:
+Convergence test P-value:1.1e-04
+Optimizing with step length 1.
+The log-likelihood improved by 0.003772.
+Iteration 16 of at most 60:
+Convergence test P-value:2.3e-01
+Optimizing with step length 1.
+The log-likelihood improved by 0.001424.
+Iteration 17 of at most 60:
+Convergence test P-value:1.6e-01
+Optimizing with step length 1.
+The log-likelihood improved by 0.001553.
+Iteration 18 of at most 60:
+Convergence test P-value:9.7e-04
+Optimizing with step length 1.
+The log-likelihood improved by 0.003247.
+Iteration 19 of at most 60:
+Convergence test P-value:1.5e-01
+Optimizing with step length 1.
+The log-likelihood improved by 0.001592.
+Iteration 20 of at most 60:
+Convergence test P-value:8.1e-01
+Convergence detected. Stopping.
+Optimizing with step length 1.
+The log-likelihood improved by 0.001433.
+Starting Monte Carlo maximum likelihood estimation (MCMLE):
+Iteration 1 of at most 100:
+Optimizing with step length 1.
+The log-likelihood improved by 2.726.
+Step length converged once. Increasing MCMC sample size.
+Iteration 3 of at most 100:
+Optimizing with step length 1.
+The log-likelihood improved by 2.274.
+Step length converged once. Increasing MCMC sample size.
+Iteration 3 of at most 100:
+Optimizing with step length 0.837257180735864.
+The log-likelihood improved by 3.971.
+Iteration 3 of at most 100:
+Optimizing with step length 1.
+The log-likelihood improved by 1.581.
+Step length converged once. Increasing MCMC sample size.
+Iteration 3 of at most 100:
+Optimizing with step length 0.704010308549468.
+The log-likelihood did not improve.
+Iteration 2 of at most 100:
+Optimizing with step length 1.
+The log-likelihood improved by 0.2996.
+Step length converged once. Increasing MCMC sample size.
+Iteration 4 of at most 100:
+Optimizing with step length 0.808178039124101.
+The log-likelihood improved by 4.818.
+Iteration 3 of at most 100:
+Optimizing with step length 1.
+The log-likelihood improved by 1.169.
+Step length converged once. Increasing MCMC sample size.
+Iteration 4 of at most 100:
+Optimizing with step length 1.
+The log-likelihood improved by 0.1475.
+Step length converged twice. Stopping.
+Finished MCMLE.
+Note: Null model likelihood calculation is not implemented for valued
+ERGMs at this time.  This means that all likelihood-based inference
+(LRT, Analysis of Deviance, AIC, BIC, etc.) is only valid between
+models with the same reference distribution and constraints.
+Evaluating log-likelihood at the estimate. Using 20 bridges: 1 2 3 4 5 6 7 8 Optimizing with step length 1.
+The log-likelihood improved by 0.03242.
+Step length converged twice. Stopping.
+Finished MCMLE.
+Note: Null model likelihood calculation is not implemented for valued
+ERGMs at this time.  This means that all likelihood-based inference
+(LRT, Analysis of Deviance, AIC, BIC, etc.) is only valid between
+models with the same reference distribution and constraints.
+Evaluating log-likelihood at the estimate. Using 20 bridges: 1 9 2 10 3 11 12 4 13 5 Optimizing with step length 1.
+The log-likelihood improved by 0.02787.
+Step length converged twice. Stopping.
+Finished MCMLE.
+Note: Null model likelihood calculation is not implemented for valued
+ERGMs at this time.  This means that all likelihood-based inference
+(LRT, Analysis of Deviance, AIC, BIC, etc.) is only valid between
+models with the same reference distribution and constraints.
+Evaluating log-likelihood at the estimate. Using 20 bridges: 1 Optimizing with step length 1.
+The log-likelihood improved by 0.07272.
+Step length converged twice. Stopping.
+Finished MCMLE.
+Note: Null model likelihood calculation is not implemented for valued
+ERGMs at this time.  This means that all likelihood-based inference
+(LRT, Analysis of Deviance, AIC, BIC, etc.) is only valid between
+models with the same reference distribution and constraints.
+Evaluating log-likelihood at the estimate. Using 20 bridges: 1 14 6 2 2 15 7 3 3 8 Optimizing with step length 1.
+The log-likelihood improved by 0.09154.
+Step length converged twice. Stopping.
+Finished MCMLE.
+Note: Null model likelihood calculation is not implemented for valued
+ERGMs at this time.  This means that all likelihood-based inference
+(LRT, Analysis of Deviance, AIC, BIC, etc.) is only valid between
+models with the same reference distribution and constraints.
+Evaluating log-likelihood at the estimate. Using 20 bridges: 1 16 4 4 9 2 5 17 10 5 3 6 11 6 4 18 7 12 7 5 8 13 8 19 6 9 9 14 7 10 10 8 15 11 11 20 9 12 12 16 10 11 13 13 12 17 .
+This model was fit using MCMC.  To examine model diagnostics and check
+for degeneracy, use the mcmc.diagnostics() function.
+14 13 14 15 Optimizing with step length 1.
+The log-likelihood improved by 0.04926.
+Step length converged twice. Stopping.
+Finished MCMLE.
+Note: Null model likelihood calculation is not implemented for valued
+ERGMs at this time.  This means that all likelihood-based inference
+(LRT, Analysis of Deviance, AIC, BIC, etc.) is only valid between
+models with the same reference distribution and constraints.
+Evaluating log-likelihood at the estimate. Using 20 bridges: 1 14 18 15 2 15 16 16 3 16 19 17 4 17 5 17 6 18 20 7 18 18 8 9 10 19 11 19 19 12 .
+This model was fit using MCMC.  To examine model diagnostics and check
+for degeneracy, use the mcmc.diagnostics() function.
+13 14 15 20 20 16 20 17 18 .
+This model was fit using MCMC.  To examine model diagnostics and check
+for degeneracy, use the mcmc.diagnostics() function.
+.
+This model was fit using MCMC.  To examine model diagnostics and check
+for degeneracy, use the mcmc.diagnostics() function.
+.
+This model was fit using MCMC.  To examine model diagnostics and check
+for degeneracy, use the mcmc.diagnostics() function.
+19 20 .
+This model was fit using MCMC.  To examine model diagnostics and check
+for degeneracy, use the mcmc.diagnostics() function.
+Optimizing with step length 1.
+The log-likelihood improved by 0.06501.
+Step length converged twice. Stopping.
+Finished MCMLE.
+Note: Null model likelihood calculation is not implemented for valued
+ERGMs at this time.  This means that all likelihood-based inference
+(LRT, Analysis of Deviance, AIC, BIC, etc.) is only valid between
+models with the same reference distribution and constraints.
+Evaluating log-likelihood at the estimate. Using 20 bridges: 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 .
+This model was fit using MCMC.  To examine model diagnostics and check
+for degeneracy, use the mcmc.diagnostics() function.
+> stopImplicitCluster()
+> 
+> save.image("results/postcovidl6_full_ergms_75.Rdata")
+> 
+> proc.time()
+      user     system    elapsed 
+804075.772    809.914 172403.389 
